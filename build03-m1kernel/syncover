@@ -1,20 +1,24 @@
 #!/bin/bash
 #
-# +--arc  --original packages
+# +--work/arc  --original packages
 # +--conf  --this dir
 # | \--conf/kernel  -- kernel archive
 # |   \--conf/kernel/meson3  -- bsp
 # |
-# +--  srcs  -- source dir
+# +--srcs  -- source dir
 # | \--srcs/arm_ref/m1-kernel-android   -- kernel dir
 # |
-# +-- objs 
-#   \-- objs/kernel  -- kernel objs
+# +--work 
+#   \--work/objs
+#      \--work/objs/kernel  -- kernel objs
 
 if [ ! -d kernel ] ; then mkdir kernel; fi
 
 rsync -tv ../srcs/xstamp0 . 
 rsync -tv ../srcs/arm_ref/m1-kernel-android/env.sh kernel/
-rsync -tv ../srcs/arm_ref/m1-kernel-android/bld.sh kernel/
+rsync -tv ../srcs/arm_ref/m1-kernel-android/k1ocfg.sh kernel/
+rsync -tv ../srcs/arm_ref/m1-kernel-android/k2mcfg.sh kernel/
+rsync -tv ../srcs/arm_ref/m1-kernel-android/k3bld.sh kernel/
+rsync -tv ../srcs/arm_ref/m1-kernel-android/k9clean.sh kernel/
 rsync -rtv ../srcs/arm_ref/m1-kernel-android/arch/arm/mach-meson3 kernel/
 
