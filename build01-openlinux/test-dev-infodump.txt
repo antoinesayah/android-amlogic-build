@@ -1,0 +1,1260 @@
+
+
+[@localhost arm_ref]$ make oldconfig
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/basic/docproc
+  HOSTCC  scripts/basic/hash
+  HOSTCC  scripts/kconfig/conf.o
+scripts/kconfig/conf.c: In function ‘conf_sym’:
+scripts/kconfig/conf.c:159:6: warning: variable ‘type’ set but not used [-Wunused-but-set-variable]
+scripts/kconfig/conf.c: In function ‘conf_choice’:
+scripts/kconfig/conf.c:231:6: warning: variable ‘type’ set but not used [-Wunused-but-set-variable]
+  HOSTCC  scripts/kconfig/kxgettext.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/lex.zconf.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf -o arch/arm/Kconfig
+*
+* Restart config...
+*
+*
+* Meson3 platform type
+*
+Support M3 (M3_SKT_V1) platform (MACH_MESON3_REFF01) [N/y/?] (NEW) n
+Support M3 (WA) platform (MACH_MESON3_REFF02) [N/y/?] (NEW) n
+Support M3 (Shuttle) platform (MACH_MESON3_REFF03) [N/y/?] (NEW) n
+Support M3 (Ramos) platform (MACH_MESON3_REFF04) [N/y/?] (NEW) n
+Support M3 (SOCKET) platform (MACH_MESON3_REFF05) [N/y/?] (NEW) n
+Support M3 (Ainol) platform (MACH_MESON3_REFF06) [N/y/?] (NEW) n
+Support M3 (Malata) platform (MACH_MESON3_REFF07) [N/y/?] (NEW) n
+Support M3 F08 platform (MACH_MESON3_REFF08) [N/y/?] (NEW) n
+Support M3 F09 platform (MACH_MESON3_REFF09) [N/y/?] (NEW) n
+Support M3 (Asus) MBX platform (MACH_MESON3_REFF10) [N/y/?] (NEW) n
+Support M3 (Gadmei) platform (MACH_MESON3_REFF11) [N/y/?] (NEW) n
+Support M3 (Gadmei Portrait 1280*800) (MACH_MESON3_REFF11_P800) [N/y/?] (NEW) n
+Support M3 (Gadmei BC 4329) (MACH_MESON3_REFF11_4329) [N/y/?] (NEW) n
+Support MT720 (Keenhi M3 1024*600) platform (MACH_MESON3_REFF14) [N/y/?] (NEW) n
+Support M3 MBX platform (MACH_MESON3_REFF16) [N/y/?] (NEW) n
+Support M3 Bestv MBX platform (MACH_MESON3_REFF20) [N/y/?] (NEW) n
+Clock Tick Rate (MESON3_CLOCK_TICK_RATE) [25000000] 25000000
+Support M3 A9 domain power down (AML_SUSPEND) [Y/n] y
+  Enable watchdog while suspend and resume (SUSPEND_WATCHDOG) [N/y] (NEW) n
+turn the gates off when system init (AML_INIT_GATE_OFF) [N/y] n
+scale clk81 freqence in dynamic mode (CLK81_DFS) [N/y] n
+*
+* Amlogic Input device support
+*
+Amlogic ir remote control support (KEYPADS_AM) [Y/n/m/?] y
+Amlogic virtual ir remote support (only for QA test) (VIRTUAL_REMOTE) [N/m/y/?] n
+Amlogic SARADC support (SARADC_AM) [Y/n/m/?] y
+  Amlogic ADC touchscreen support (ADC_TOUCHSCREEN_AM) [N/m/y/?] n
+  Amlogic ADC keypad support (ADC_KEYPADS_AM) [Y/n/m/?] y
+Amlogic Key Input(custom) support (KEY_INPUT_CUSTOM_AM) [Y/n/m/?] y
+Sintek capacitive touch panel (SINTEK_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+ZET6221 capacitive touch panel (ZET6221_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW) n
+SSD2533 capacitive touch panel (SSD2533_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW) n
+ITK capacitive touch panel (ITK_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+EETI capacitive touch panel (EETI_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+sis92xx capacitive touch panel (SIS92XX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+focaltech capacitive touch panel (FOCALTECH_CAPACITIVE_TOUCHSCREEN) [Y/n/m/?] y
+focaltech capacitive touch panel support upgrade (FOCALTECH_TOUCHSCREEN_CODE_UPG) [N/m/y/?] n
+HX8520 capacitive touch panel (HX8520_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Raydium capacitive touch panel (RAYDIUM_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix capacitive touch panel (GOODIX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix GT819 capacitive touch panel (GOODIX_GT819_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix GT828X capacitive touch panel (GOODIX_GT82X_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW) n
+UOR7X5X resistive touch panel (UOR7X5X_RESISTIVE_TOUCHSCREEN) [N/m/y/?] n
+UOR6X5X resistive touch panel (UOR6X5X_RESISTIVE_TOUCHSCREEN) [N/m/y/?] n
+pixcir capacitive touch panel (PIXCIR_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+ite it7260 capacitive touch panel (IT7260_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+SSD25XX capacitive touch panel (SSD25XX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+SiS 9200 family I2C touchscreen driver (TOUCHSCREEN_SIS_I2C) [N/m/y/?] n
+IT7230 touch key pad support (TOUCH_KEY_PAD_IT7230) [N/m/y/?] n
+SO340010 capacitive keypad support (TOUCH_KEY_PAD_SO340010) [N/m/y/?] n
+VFD support (VFD_ENABLE) [N/m/y/?] n
+Amlogic IR Receiver(Self-study Remote) support (AM_IR_RECEIVER) [N/m/y/?] (NEW) n
+*
+* Amlogic BOOT MONITOR SYSFS
+*
+BOOT MONITOR SYSFS (BOOT_MONITOR) [N/y/?] (NEW) n
+*
+* Mali 400 GPU OpenGL device driver
+*
+Mali 400 GPU OpenGL device driver (MALI) [M/n/?] (NEW) n
+*
+* Hardware Monitoring support
+*
+Hardware Monitoring support (HWMON) [Y/n/m/?] y
+  Hardware Monitoring Chip debugging messages (HWMON_DEBUG_CHIP) [N/y/?] (NEW) n
+  *
+  * Native drivers
+  *
+
+
+
+[ arm_ref/arch/arm/configss]$ grep ARCH_MESON3 meson*
+
+meson_reff01_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff02_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff03_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff04_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff05_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff06_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff07_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff08_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff08_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff09_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff10_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_2_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_2_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_4329_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_4329_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_870_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_870_mrvl_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_870_mrvl_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_870_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_nano_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_nano_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_P1280_800_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_P1280_800_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff11_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff14_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff16_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff16_recovery_defconfig:CONFIG_ARCH_MESON3=y
+meson_reff20_defconfig:CONFIG_ARCH_MESON3=y
+
+
+[configs]$ grep AML_NAND_ENV=y meson_reff*
+
+meson_reff02_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff04_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff08_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff08_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_2_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_2_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_4329_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_4329_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_870_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_870_mrvl_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_870_mrvl_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_870_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_nano_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_nano_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_P1280_800_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_P1280_800_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff11_recovery_defconfig:CONFIG_AML_NAND_ENV=y
+meson_reff14_defconfig:CONFIG_AML_NAND_ENV=y
+
+
+
+
+<5>[    1.629525] 0x000000000000-0x000000400000 : "bootloader"
+<4>[    1.835277] aml nand env valid addr: 604000
+<6>[    1.871398] nand env: nand_env_probe.
+<5>[    1.871926] Creating 8 MTD partitions on "C revision NAND 4GiB MT29F32G-C":
+<5>[    1.871942] 0x000000c00000-0x000001400000 : "logo"
+<5>[    1.872721] 0x000001400000-0x000001c00000 : "aml_logo"
+<5>[    1.873502] 0x000001c00000-0x000002400000 : "recovery"
+<5>[    1.874346] 0x000002400000-0x000002c00000 : "boot"
+<5>[    1.875161] 0x000002c00000-0x000022c00000 : "system"
+<4>[    1.875181]  NAND bbt detect factory Bad block at 5a00000     ---ubi0
+<5>[    1.876036] 0x000022c00000-0x00002ac00000 : "cache"           ---yaffs
+<5>[    1.876840] 0x00002ac00000-0x00004ac00000 : "userdata"        ---ubi1
+<5>[    1.877654] 0x00004ac00000-0x000100000000 : "NFTL_Part"
+
+
+cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00400000 00100000 "bootloader"
+mtd1: 00800000 00200000 "logo"
+mtd2: 00800000 00200000 "aml_logo"
+mtd3: 00800000 00200000 "recovery"
+mtd4: 00800000 00200000 "boot"
+mtd5: 20000000 00200000 "system"
+mtd6: 08000000 00200000 "cache"
+mtd7: 20000000 00200000 "userdata"
+mtd8: b5400000 00200000 "NFTL_Part"
+
+
+
+shell@android:/proc $ cat cpuinfo
+
+Processor       : ARMv7 Processor rev 4 (v7l)
+BogoMIPS        : 389.12
+Features        : swp half thumb fastmult vfp edsp neon vfpv3
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x2
+CPU part        : 0xc09
+CPU revision    : 4
+
+Hardware        : AMLOGIC MESON3 8726M SKT SH
+Revision        : 0020
+Serial          : 000000000000000c
+
+
+shell@android:/sdcard/tmp $ mount
+
+mount
+rootfs /           rootfs rw 0 0
+
+tmpfs  /dev        tmpfs  rw,nosuid,relatime,mode=755 0 0
+tmpfs  /mnt/asec   tmpfs  rw,relatime,mode=755,gid=1000 0 0
+tmpfs  /mnt/obb    tmpfs  rw,relatime,mode=755,gid=1000 0 0
+tmpfs  /mnt/sdcard/.android_secure  tmpfs ro,relatime,size=0k,mode=000 0 0
+
+devpts /dev/pts    devpts rw,relatime,mode=600,ptmxmode=000 0 0
+proc   /proc       proc   rw,relatime 0 0
+sysfs  /sys        sysfs  rw,relatime 0 0
+none   /acct       cgroup rw,relatime,cpuacct 0 0
+none   /dev/cpuctl cgroup rw,relatime,cpu 0 0
+none   /proc/bus/usb usbfs rw,relatime 0 0
+
+ubi0_0 /system     ubifs  rw,relatime 0 0
+ubi1_0 /data       ubifs  rw,nosuid,nodev,relatime 0 0
+
+/dev/block/mtdblock6 /cache yaffs2 rw,nosuid,nodev,relatime 0 0
+/dev/block/vold/250:33 /mnt/sdcard vfat rw,dirsync,nosuid,nodev,noexec,relatime,uid=1000,gid=1015,fmask=0002,dmask=0002,allow_utime=0020,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 0
+/dev/block/vold/250:33 /mnt/secure/asec vfat rw,dirsync,nosuid,nodev,noexec,relatime,uid=1000,gid=1015,fmask=0002,dmask=0002,allow_utime=0020,codepage=cp437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 0
+
+
+shell@android:/ $ dmesg
+dmesg
+<6>[    0.000000] Initializing cgroup subsys cpu
+<5>[    0.000000] Linux version 2.6.34 (zwzhu@midcs-desktop) (gcc version 4.4.3 (GCC) ) #431 PREEMPT Tue Oct 16 14:33:55 CST 2012
+<4>[    0.000000] CPU: ARMv7 Processor [412fc094] revision 4 (ARMv7), cr=10c53c7f
+<4>[    0.000000] CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+<4>[    0.000000] Machine: AMLOGIC MESON3 8726M SKT SH
+<4>[    0.000000] Ignoring unrecognised tag 0x00000000
+<4>[    0.000000] Memory policy: ECC disabled, Data cache writeback
+<7>[    0.000000] On node 0 totalpages: 240640
+<7>[    0.000000] free_area_init_node: node 0, pgdat c0a88fb4, node_mem_map c0b93000
+<7>[    0.000000]   Normal zone: 1136 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 122768 pages, LIFO batch:31
+<7>[    0.000000]   HighMem zone: 912 pages used for memmap
+<7>[    0.000000]   HighMem zone: 115824 pages, LIFO batch:31
+<4>[    0.000000] BUG: mapping for 0x84000000 at 0xc4000000 overlaps vmalloc space
+<4>[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 238592
+<5>[    0.000000] Kernel command line: init=/init console=ttyS0,115200n8 nohlt a9_clk=600M clk81=192M quiet hdmitx=vdacoff,powermode1,unplug_powerdown mem=1024M vmalloc=200M logo=osd1,loaded,0x84100000,lcd,full
+<4>[    0.000000] (CTS_DDR_CLK) = 528MHz
+<4>[    0.000000] (CTS_MALI_CLK) = 264MHz
+<4>[    0.000000] (CTS_A9_CLK) = 600MHz
+<4>[    0.000000] CLK81(from MSR_CLK_REG) = 192000000MHz, a9_clk(from args) = 192000000
+<4>[    0.000000] CLK81 is the same as args
+<4>[    0.000000] HDMI DEBUG: hdmitx_boot_para_setup [1430]hdmi: set init powermode 1
+<4>[    0.000000] osd1:1
+<4>[    0.000000] loaded:268435459
+<4>[    0.000000] logo has been loaded
+<4>[    0.000000] lcd:12
+<4>[    0.000000] full:2
+<6>[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.000000] Memory: 64MB 364MB 56MB 456MB = 940MB total
+<5>[    0.000000] Memory: 942784k/942784k available, 19776k reserved, 466944K highmem
+<5>[    0.000000] Virtual kernel memory layout:
+<5>[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+<5>[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+<5>[    0.000000]     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+<5>[    0.000000]     vmalloc : 0xe4000000 - 0xf0000000   ( 192 MB)
+<5>[    0.000000]     lowmem  : 0xc0000000 - 0xe3800000   ( 568 MB)
+<5>[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+<5>[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+<5>[    0.000000]       .init : 0xc0008000 - 0xc02d8000   (2880 kB)
+<5>[    0.000000]       .text : 0xc02d8000 - 0xc0a3f024   (7581 kB)
+<5>[    0.000000]       .data : 0xc0a40000 - 0xc0a898c0   ( 295 kB)
+<6>[    0.000000] SLUB: Genslabs=11, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:128
+<4>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.000000] console [ttyS0] enabled
+<6>[    0.000322] Calibrating delay loop... 933.88 BogoMIPS (lpj=4669440)
+<4>[    0.250183] Mount-cache hash table entries: 512
+<6>[    0.250736] Initializing cgroup subsys cpuacct
+<6>[    0.250765] Initializing cgroup subsys freezer
+<6>[    0.250827] CPU: Testing write buffer coherency: ok
+<6>[    0.254801] regulator: core version 0.5
+<6>[    0.255100] NET: Registered protocol family 16
+<6>[    0.255915] L2X0 cache controller enabled
+<4>[    0.355881]
+<4>[    0.355888]  ------------------init LCD----------.
+<6>[    0.355905] power hold set high!
+<6>[    0.355916] set_vccx2 power up
+<5>[    0.358292] USB PHY clock souce: XTAL input divided by 2
+<6>[    0.358314] register lm device 0
+<6>[    0.358374] register lm device 1
+<4>[    0.358430] set gpio0.15 input
+<4>[    0.358487] chip version=e34c3110
+<4>[    0.358524] major number 0 for disp
+<4>[    0.358537] register tv module server ok
+<4>[    0.358599] major number 0 for disp
+<4>[    0.358611] register tv module server ok
+<4>[    0.358739] drivers/amlogic/i2c/aml_i2c.c : aml_i2c_init
+<4>[    0.358781] drivers/amlogic/i2c/aml_i2c.c : aml_i2c_probe
+<4>[    0.358798] master_no = 0, resource = c0a48bb0, maseter_regs=
+<6>[    0.359012] aml-i2c aml-i2c.0: add adapter aml_i2c_adap0(e3434428)
+<6>[    0.359028] aml-i2c aml-i2c.0: aml i2c bus driver.
+<4>[    0.359090] drivers/amlogic/i2c/aml_i2c.c : aml_i2c_probe
+<4>[    0.359108] master_no = 1, resource = c0a48c20, maseter_regs=
+<6>[    0.359256] aml-i2c aml-i2c.1: add adapter aml_i2c_adap1(e3434828)
+<6>[    0.359272] aml-i2c aml-i2c.1: aml i2c bus driver.
+<4>[    0.359335] drivers/amlogic/i2c/aml_i2c.c : aml_i2c_probe
+<4>[    0.359352] master_no = 2, resource = c0a48c90, maseter_regs=
+<6>[    0.359504] aml-i2c aml-i2c.2: add adapter aml_i2c_adap2(e3434c28)
+<6>[    0.359519] aml-i2c aml-i2c.2: aml i2c bus driver.
+<6>[    0.362184] axp_mfd 2-0034: AXP (CHIP ID: 0x21) detected
+<4>[    0.380241] bio: create slab <bio-0> at 0
+<5>[    0.380785] SCSI subsystem initialized
+<6>[    0.380932] usbcore: registered new interface driver usbfs
+<6>[    0.381021] usbcore: registered new interface driver hub
+<6>[    0.381182] usbcore: registered new device driver usb
+<4>[    0.780217] (CTS_DDR_CLK) = 528MHz
+<6>[    1.132822] Advanced Linux Sound Architecture Driver Version 1.0.22.1.
+<6>[    1.133204] Bluetooth: Core ver 2.15
+<6>[    1.133398] NET: Registered protocol family 31
+<6>[    1.133407] Bluetooth: HCI device and connection manager initialized
+<6>[    1.133419] Bluetooth: HCI socket layer initialized
+<6>[    1.133612] cfg80211: Calling CRDA to update world regulatory domain
+<6>[    1.133893] Switching to clocksource Timer-E
+<6>[    1.134483] NET: Registered protocol family 2
+<6>[    1.134662] IP route cache hash table entries: 16384 (order: 4, 65536 bytes)
+<6>[    1.135245] TCP established hash table entries: 65536 (order: 7, 524288 bytes)
+<6>[    1.136379] TCP bind hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    1.136902] TCP: Hash tables configured (established 65536 bind 65536)
+<6>[    1.136912] TCP reno registered
+<6>[    1.136922] UDP hash table entries: 256 (order: 0, 4096 bytes)
+<6>[    1.136940] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+<6>[    1.137082] NET: Registered protocol family 1
+<6>[    1.137387] RPC: Registered udp transport module.
+<6>[    1.137400] RPC: Registered tcp transport module.
+<6>[    1.137408] RPC: Registered tcp NFSv4.1 backchannel transport module.
+<4>[    1.152764] Create class touchpanel is sucess
+<4>[    1.170993] highmem bounce pool size: 64 pages
+<6>[    1.171116] ashmem: initialized
+<5>[    1.176141] VFS: Disk quotas dquot_6.5.2
+<4>[    1.176404] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+<6>[    1.178610] NTFS driver 2.1.29 [Flags: R/W].
+<7>[    1.178934] yaffs built Sep 20 2012 16:14:05 Installing.
+<6>[    1.178979] fuse init (API version 7.13)
+<6>[    1.179465] msgmni has been set to 929
+<6>[    1.182845] alg: No test for stdrng (krng)
+<6>[    1.182929] io scheduler noop registered
+<6>[    1.182939] io scheduler deadline registered
+<6>[    1.183190] io scheduler cfq registered (default)
+<6>[    1.388587] brd: module loaded
+<6>[    1.390478] loop: module loaded
+<6>[    1.392003] PPP generic driver version 2.4.2
+<6>[    1.393396] PPP MPPE Compression module registered
+<6>[    1.393411] NET: Registered protocol family 24
+<6>[    1.393448] PPPoL2TP kernel driver, V1.0
+<6>[    1.393458] tun: Universal TUN/TAP device driver, 1.6
+<6>[    1.393466] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+<6>[    1.394032] usbcore: registered new interface driver asix
+<6>[    1.394103] usbcore: registered new interface driver cdc_ether
+<6>[    1.394167] usbcore: registered new interface driver qf9700
+<6>[    1.394211] usbcore: registered new interface driver sr9600
+<6>[    1.394406] usbcore: registered new interface driver cdc_acm
+<6>[    1.394415] cdc_acm: v0.26:USB Abstract Control Model driver for USB modems and ISDN adapters
+<6>[    1.394425] Initializing USB Mass Storage driver...
+<6>[    1.394480] usbcore: registered new interface driver usb-storage
+<6>[    1.394489] USB Mass Storage support registered.
+<6>[    1.394598] usbcore: registered new interface driver usbserial
+<6>[    1.394607] usbserial: USB Serial Driver core
+<6>[    1.394645] USB Serial support registered for GSM modem (1-port)
+<6>[    1.394693] usbcore: registered new interface driver option
+<6>[    1.394701] option: v0.7.2:USB Driver for GSM modems
+<6>[    1.395037] mice: PS/2 mouse device common for all mice
+<6>[    1.395804] i2c /dev entries driver
+<6>[    1.396636] Linux video capture interface: v2.00
+<6>[    1.396729] gc0308 0-0021: chip found @ 0x42 (aml_i2c_adap0)
+<4>[    1.396757] amlogic camera driver: gc0308_v4l2_init.
+<4>[    1.483922] +++found a init function, and run it..
+<4>[    1.483936] amlogic camera driver: gc0308_v4l2_uninit.
+<4>[    1.483944] +++found a uninit function, and run it..
+<4>[    1.484291] ******* enter itk early suspend register *******
+<6>[    1.587885] mma7660 1-004c: build time Sep 24 2012 20:50:26
+<6>[    1.588034] input: mma7660 as /devices/i2c-1/1-004c/input/input0
+<4>[    1.588415] Register mma7660 early_suspend done
+<6>[    1.589776] device-mapper: ioctl: 4.17.0-ioctl (2010-03-05) initialised: dm-devel@redhat.com
+<6>[    1.591376] usbcore: registered new interface driver hiddev
+<6>[    1.591429] usbcore: registered new interface driver usbhid
+<6>[    1.591437] usbhid: USB HID core driver
+<6>[    1.592209] logger: created 64K log 'log_main'
+<6>[    1.592436] logger: created 256K log 'log_events'
+<6>[    1.592645] logger: created 64K log 'log_radio'
+<6>[    1.592843] logger: created 64K log 'log_system'
+<4>[    1.592937] start init vout module
+<4>[    1.592993] create  vout attribute ok
+<4>[    1.593055] ge2d_init
+<4>[    1.593070] ge2d_dev major:252
+<4>[    1.593410] ge2d start monitor
+<4>[    1.593548] osd_init
+<4>[    1.593604] [osd0] 0x84100000-0x843fffff
+<4>[    1.593688] Frame buffer memory assigned at phy:0x84100000, vir:0xe4400000, size=3072K
+<4>[    1.593699] ---------------clear framebuffer0 memory
+<4>[    1.596394] [osd1] 0x84400000-0x844fffff
+<4>[    1.596446] Frame buffer memory assigned at phy:0x84400000, vir:0xe4200000, size=1024K
+<4>[    1.596458] init fbdev bpp is :24
+<4>[    1.596862] osd probe ok
+<6>[    1.596977] enter aml_bl_probe
+<4>[    1.597078] ge2d workqueue monitor start
+<6>[    1.623932] --finish aml_bl_probe
+<4>[    1.623990] vout2_init_module enter
+<4>[    1.624033] start init vout2 module
+<4>[    1.624084] create  vout2 attribute ok
+<4>[    1.628393] UART_ttyS0:(irq = 90, address = 0xf81004c0)
+<4>[    1.628416] UART_ttyS1:(irq = 26, address = 0xf11084c0)
+<4>[    1.628433] UART_ttyS2:(irq = 75, address = 0xf11084dc)
+<4>[    1.628449] UART_ttyS3:(irq = 93, address = 0xf1108700)
+<4>[    1.628458] Port 0 = IRQ 90
+<4>[    1.628463] Port 1 = IRQ 26
+<4>[    1.628469] Port 2 = IRQ 75
+<4>[    1.628475] Port 3 = IRQ 93
+<6>[    1.628483] Amlogic nand flash AVOS driver for M3, Version 1.1 (c) 2010 Amlogic Inc.
+<4>[    1.628636] bus_cycle=17, bus_timing=10, start_cycle=10, end_cycle=10,system=5.2ns
+<4>[    1.628966] No NAND device found.
+<4>[    1.629193] NAND device id: 2c 68 4 4a a9 0
+<6>[    1.629210] NAND device: Manufacturer ID: 0x2c, Chip ID: 0x2c (Micron C revision NAND 4GiB MT29F32G-C)
+<4>[    1.629351] #####aml_nand_init, with RB pins and chip->chip_delay:20
+<4>[    1.629435] bus_cycle=4, bus_timing=5, start_cycle=5, end_cycle=6,system=5.2ns
+<4>[    1.629448] oob size is not enough for selected bch mode: NAND_BCH60_1K_MODE force bch to mode: NAND_BCH30_1K_MODE
+<5>[    1.629512] Creating 1 MTD partitions on "C revision NAND 4GiB MT29F32G-C":
+<5>[    1.629525] 0x000000000000-0x000000400000 : "bootloader"
+<4>[    1.630611] bus_cycle=17, bus_timing=10, start_cycle=10, end_cycle=10,system=5.2ns
+<4>[    1.630943] No NAND device found.
+<4>[    1.631170] NAND device id: 2c 68 4 4a a9 0
+<6>[    1.631186] NAND device: Manufacturer ID: 0x2c, Chip ID: 0x2c (Micron C revision NAND 4GiB MT29F32G-C)
+<6>[    1.830045] 1 NAND chips detected
+<4>[    1.830085] #####aml_nand_init, with RB pins and chip->chip_delay:20
+<4>[    1.830173] bus_cycle=4, bus_timing=5, start_cycle=5, end_cycle=6,system=5.2ns
+<4>[    1.830186] oob size is not enough for selected bch mode: NAND_BCH60_1K_MODE force bch to mode: NAND_BCH30_1K_MODE
+<4>[    1.830203]  oob layout use nand base oob layout oobsize = 16,oobmul =2,mtd->oobsize =448,aml_chip->oob_size =224
+<4>[    1.835277] aml nand env valid addr: 604000
+<6>[    1.871398] nand env: nand_env_probe.
+<5>[    1.871926] Creating 8 MTD partitions on "C revision NAND 4GiB MT29F32G-C":
+<5>[    1.871942] 0x000000c00000-0x000001400000 : "logo"
+<5>[    1.872721] 0x000001400000-0x000001c00000 : "aml_logo"
+<5>[    1.873502] 0x000001c00000-0x000002400000 : "recovery"
+<5>[    1.874346] 0x000002400000-0x000002c00000 : "boot"
+<5>[    1.875161] 0x000002c00000-0x000022c00000 : "system"
+<4>[    1.875181]  NAND bbt detect factory Bad block at 5a00000
+<5>[    1.876036] 0x000022c00000-0x00002ac00000 : "cache"
+<5>[    1.876840] 0x00002ac00000-0x00004ac00000 : "userdata"
+<5>[    1.877654] 0x00004ac00000-0x000100000000 : "NFTL_Part"
+<4>[    2.915298] nftl initilize completely dev size: 0xa7a00000 14
+<6>[    2.915918]  avnftl8: p1
+<4>[    2.916703] nftl release flush cache data: 0
+<6>[    2.916985] dwc_otg: version 2.60a 22-NOV-2006
+<7>[    2.917022] dwc_otg lm0: start=0xf9040000
+<7>[    2.917031] dwc_otg lm0: core work at High speed.
+<7>[    2.917040] dwc_otg lm0: DMA config: BURST_SINGLE
+<7>[    3.333937] dwc_otg lm0: Working on port type = OTG
+<7>[    3.333952] dwc_otg lm0: Current port type: SLAVE
+<6>[    3.333967] DWC_otg: Using DMA mode
+<6>[    3.333976] dwc_otg lm0: DWC OTG Controller
+<6>[    3.334055] dwc_otg lm0: new USB bus registered, assigned bus number 1
+<6>[    3.334093] dwc_otg lm0: irq 30, io mem 0x00000000
+<6>[    3.334777] hub 1-0:1.0: USB hub found
+<6>[    3.334802] hub 1-0:1.0: 1 port detected
+<6>[    3.343996] DWC_otg: Shared Tx FIFO mode
+<7>[    3.344128] dwc_otg lm1: start=0xf90c0000
+<7>[    3.344137] dwc_otg lm1: core work at High speed.
+<7>[    3.344146] dwc_otg lm1: DMA config: BURST_SINGLE
+<3>[    3.344319] =========== shanll: usb_charger_detect_cb--->bc_mode = 2
+<7>[    3.763929] dwc_otg lm1: Working on port type = HOST
+<6>[    3.763951] DWC_otg: Using DMA mode
+<6>[    3.763959] dwc_otg lm1: DWC OTG Controller
+<6>[    3.764017] dwc_otg lm1: new USB bus registered, assigned bus number 2
+<6>[    3.764054] dwc_otg lm1: irq 31, io mem 0x00000000
+<6>[    3.764087] DWC_otg: Init: Port Power? op_state=1
+<6>[    3.764095] DWC_otg: Init: Power Port (0)
+<6>[    3.764786] hub 2-0:1.0: USB hub found
+<6>[    3.764811] hub 2-0:1.0: 1 port detected
+<4>[    3.765115] Amlogic A/V streaming port init
+<4>[    3.767537] regist mpeg12 codec profile
+<4>[    3.767590] regist mpeg4 codec profile
+<4>[    3.767598] amvdec_vc1 module init
+<4>[    3.767642] regist vc1 codec profile
+<4>[    3.767648] amvdec_h264 module init
+<4>[    3.767691] regist h264 codec profile
+<4>[    3.767698] amvdec_h264mvc module init
+<4>[    3.767776] regist mjpeg codec profile
+<4>[    3.767782] amvdec_real module init
+<4>[    3.767825] regist real codec profile
+<6>[    3.769436] Keypad Driver
+<6>[    3.769887] input: aml_keypad as /devices/platform/m1-kp.0/input/input1
+<4>[    3.770554] remote config major:248
+<4>[    3.770928] physical address:0xa37a2000
+<6>[    3.770997] SARADC Driver init.
+<6>[    3.771143] ADC Keypad Driver init.
+<6>[    3.771182] chan #4 used for ADC key
+<6>[    3.771190] menu key(139) registed.
+<6>[    3.771197] vol- key(114) registed.
+<6>[    3.771203] vol+ key(115) registed.
+<6>[    3.771209] exit key(158) registed.
+<6>[    3.771216] home key(102) registed.
+<6>[    3.771356] input: adc_keypad as /devices/platform/m1-adckp.0/input/input2
+<4>[    3.771693] adc keypad register input device completed.
+<4>[    3.771712] adc keypad major:247
+<6>[    3.772094] Key input Driver init.
+<6>[    3.772152] Key 116 registed.
+<6>[    3.772311] input: key_input as /devices/platform/m1-keyinput.0/input/input3
+<4>[    3.772651] Key input register input device completed.
+<4>[    3.772671] key_input major:244
+<4>[    3.773087] ==ft5x0x_ts_init==
+<4>[    3.773127] set gpio2.3 output(1)
+<4>[    3.853920] <FIQ>:Deinterlace: Init 100us T
+<4>[    3.853927] 0
+<4>[    4.078639] ==ft5x0x_ts_probe=
+<4>[    4.078647] ==kzalloc=
+<4>[    4.078653] ==kzalloc success=
+<4>[    4.171433] ==enable Irq=
+<4>[    4.171449] set gpio0.16 input
+<4>[    4.171457] ==enable Irq success=
+<4>[    4.171464] ==input_allocate_device=
+<6>[    4.171653] input: ft5x06 as /devices/virtual/input/input4
+<4>[    4.172050] ==register_early_suspend =
+<4>[    4.172309] [FST] Firmware version = 0x10
+<4>[    4.172533] ==probe over =
+<4>[    4.172606] ret=0
+<4>[    4.174132] Memory Card media Major: 253
+<4>[    4.174224] card max_req_size is 128K
+<4>[    4.174677] card creat process sucessful
+<6>[    4.174803] [dsp]DSP start addr 0xc4000000
+<6>[    4.174861] [dsp]register dsp to char divece(232)
+<6>[    4.176096] using rtc device, aml_rtc, for alarms
+<6>[    4.176136] aml_rtc aml_rtc: rtc core: registered aml_rtc as rtc0
+<6>[    4.176936] regulator: axp20_ldo1: 1300 mV
+<6>[    4.178018] regulator: axp20_ldo2: 1800 <--> 3300 mV at 3000 mV
+<6>[    4.179082] regulator: axp20_ldo3: 700 <--> 3500 mV at 2500 mV
+<6>[    4.180137] regulator: axp20_ldo4: 1250 <--> 3300 mV at 3300 mV
+<6>[    4.181676] regulator: axp20_buck2: 700 <--> 2275 mV at 1525 mV
+<6>[    4.183219] regulator: axp20_buck3: 700 <--> 3500 mV at 1225 mV
+<6>[    4.183805] regulator: axp20_ldoio0: 1800 <--> 3300 mV at 2800 mV
+<6>[    4.184183] input: axp20-supplyer as /devices/i2c-2/2-0034/axp20-supplyer.28/input/input5
+<3>[    4.190848] ocv_cap[0] = 0, ocv_cap[1] = 193
+<3>[    4.190874] ocv_cap[2] = 0, ocv_cap[3] = 194
+<3>[    4.193814] ocv_cap[4] = 0, ocv_cap[5] = 195
+<3>[    4.198228] ocv_cap[6] = 0, ocv_cap[7] = 196
+<3>[    4.202308] ocv_cap[8] = 0, ocv_cap[9] = 197
+<3>[    4.206573] ocv_cap[10] = 1, ocv_cap[11] = 198
+<3>[    4.210974] ocv_cap[12] = 18, ocv_cap[13] = 199
+<3>[    4.215495] ocv_cap[14] = 27, ocv_cap[15] = 200
+<3>[    4.219988] ocv_cap[16] = 41, ocv_cap[17] = 201
+<3>[    4.224621] ocv_cap[18] = 49, ocv_cap[19] = 202
+<3>[    4.229001] ocv_cap[20] = 58, ocv_cap[21] = 203
+<3>[    4.233508] ocv_cap[22] = 64, ocv_cap[23] = 204
+<3>[    4.238027] ocv_cap[24] = 76, ocv_cap[25] = 205
+<3>[    4.242521] ocv_cap[26] = 86, ocv_cap[27] = 206
+<3>[    4.247040] ocv_cap[28] = 94, ocv_cap[29] = 207
+<3>[    4.251535] ocv_cap[30] = 100, ocv_cap[31] = 208
+<4>[    4.280841] last_rest_vol = 94, now_rest_vol = 93
+<4>[    4.281402] ============= axp_battery_probe: success ===========
+<4>[    4.282393] gpio dev major number:243
+<4>[    4.283288] create gpio device success
+<4>[    4.283301] amvdec_viuin module init
+<4>[    4.283533] amvdec_viuin probe start.
+<4>[    4.283545] amvdec_viuin probe end.
+<4>[    4.283586] amvdec_656in module init
+<4>[    4.283630] amvdec_656in probe start.
+<4>[    4.283637] amvdec_656in probe end.
+<6>[    4.284400]  vdin[0] memory start addr is 86500000, mem_size is 1900000 .
+<6>[    4.284415] vdin0: flags:0x0
+<6>[    4.284447] vdin: driver initialized ok
+<6>[    4.284594] efuse===========================================
+<6>[    4.285097] efuse: device efuse created
+<6>[    4.285172] efuse--------------------------------------------
+<4>[    4.286150] HDMI DEBUG: amhdmitx_init [1323]HDMI DEBUG: amhdmitx_probe [1181]Set HDMI:Chip C
+<4>[    4.294031] HDMI DEBUG: hdmi_hw_init [1138]
+<4>[    4.294608] Dump data in efuse, offset 68, size 310:
+<4>[    4.294617] d6 f8 23 1a 65 00 00 00 49 35 fa 3e 0c bc 5d a3
+<4>[    4.294644] 66 7e bb 8a ef 56 dd 91 87 e9 02 2a 32 8a b9 29
+<4>[    4.294670] 2e d1 6d a3 6b cc 7e 0b 12 cb 5e 2e 6d 6f b5 b6
+<4>[    4.294695] f2 ff c0 d1 71 65 5f b8 dd f8 eb 27 d4 0e 23 24
+<4>[    4.294721] 09 ea 36 fe 97 e1 59 94 42 64 8c 65 ef 0c 7a 7e
+<4>[    4.294753] 6e 2b 5f d3 72 89 5c d1 2d 46 a9 90 34 a6 20 14
+<4>[    4.294779] be 26 30 f4 32 62 e1 04 86 d9 e1 94 8b bf c9 11
+<4>[    4.294805] a7 9d 45 ff 9d 1f 28 ee e3 67 a2 8d ec ce ca 2b
+<4>[    4.294830] 89 da 43 ac 18 28 d8 f9 11 64 81 35 78 72 12 72
+<4>[    4.294861] 10 ad 70 7f ff b6 10 e3 74 f6 8a c0 80 96 e6 ef
+<4>[    4.294887] f1 cf e9 13 cc 7c 29 9a 1b b0 94 d7 3c 94 6c 34
+<4>[    4.294912] c5 19 22 82 24 d8 4e a9 4c 98 3f 89 e8 47 6d a9
+<4>[    4.294938] 27 59 69 e5 d3 b4 d8 fb a1 6c f0 5c 9d dd 85 1d
+<4>[    4.294963] 2a b3 fe 8a 39 d1 fb b5 77 1c ad 67 07 46 73 95
+<4>[    4.294995] 27 14 6a 45 36 4a 81 7f 1d 00 5a 4a 75 4b 2b ec
+<4>[    4.295020] e7 b5 40 b1 1d 06 64 f8 0c ae 20 87 d7 07 28 8e
+<4>[    4.295046] ab e9 af 66 27 fd 80 24 66 62 f7 55 94 5b b7 a6
+<4>[    4.295072] d3 02 c6 96 dc bf 04 b7 82 3d 95 4e 83 91 7f 58
+<4>[    4.295103] 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00
+<4>[    4.295129] 00 8f 00 00 00 00 *****
+<4>[    4.296367] power off hdmi, unmux hpd
+<4>[    4.296396] Hdmi phy suspend
+<4>[    4.296404] HDMI DEBUG: hdmi_task_handle [920]HCI UART driver ver 2.2
+<6>[    4.304246] Bluetooth: HCI H4 protocol initialized
+<6>[    4.308710] android_usb gadget: Mass Storage Function, version: 2009/09/11
+<6>[    4.308738] android_usb gadget: Number of LUNs=2
+<6>[    4.308749]  lun0: LUN: removable file: (no medium)
+<6>[    4.308758]  lun1: LUN: removable file: (no medium)
+<6>[    4.309274] android_usb gadget: android_usb ready
+<4>[    4.309872] No device for DAI aml-dai0
+<4>[    4.309932] ***Entered sound/soc/aml/aml_m3.c:aml_m3_audio_probe
+<4>[    4.310468] ***Entered sound/soc/aml/aml_m3_codec.c:aml_m3_register
+<6>[    4.374069] usb 2-1: new high speed USB device using dwc_otg and address 2
+<4>[    4.624344] aml-pcm 0:preallocate_dma_buffer: area=ffc29000, addr=a2040000, size=65536
+<4>[    4.624618] aml-pcm 1:preallocate_dma_buffer: area=ffc4a000, addr=a2080000, size=65536
+<6>[    4.624630] asoc: AML-M3 <-> aml-dai0 mapping ok
+<4>[    4.624733] ***Entered sound/soc/aml/aml_m3.c:aml_m3_codec_init:
+<3>[    4.624781] dapm: AML_M3_CODEC: configuring unknown pin LINPUT1
+<3>[    4.625154] dapm: AML_M3_CODEC: configuring unknown pin RINPUT1
+<3>[    4.631046] dapm: AML_M3_CODEC: configuring unknown pin HP MIC
+<3>[    4.636892] dapm: AML_M3_CODEC: configuring unknown pin FM IN
+<6>[    4.642842] input: AML-M3 hp_switch as /devices/platform/soc-audio/sound/card0/input6
+<6>[    4.645425] ALSA device list:
+<6>[    4.645436]   #0: AML-M3 (AML_M3_CODEC)
+<4>[    4.645691] GACT probability NOT on
+<4>[    4.645709] Mirror/redirect action on
+<4>[    4.645718] u32 classifier
+<4>[    4.645724]     Actions configured
+<4>[    4.645733] Netfilter messages via NETLINK v0.30.
+<4>[    4.645780] nf_conntrack version 0.5.0 (14731 buckets, 58924 max)
+<4>[    4.646345] CONFIG_NF_CT_ACCT is deprecated and will be removed soon. Please use
+<4>[    4.646358] nf_conntrack.acct=1 kernel parameter, acct=1 nf_conntrack module option or
+<4>[    4.646368] sysctl net.netfilter.nf_conntrack_acct=1 to enable it.
+<4>[    4.646880] ctnetlink v0.93: registering with nfnetlink.
+<6>[    4.647033] xt_time: kernel timezone is -0000
+<6>[    4.648707] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    4.648792] arp_tables: (C) 2002 David S. Miller
+<6>[    4.648856] TCP cubic registered
+<6>[    4.649630] NET: Registered protocol family 10
+<6>[    4.651302] lo: Disabled Privacy Extensions
+<6>[    4.652497] Mobile IPv6
+<6>[    4.652509] IPv6 over IPv4 tunneling driver
+<6>[    4.653643] sit0: Disabled Privacy Extensions
+<6>[    4.655779] ip6tnl0: Disabled Privacy Extensions
+<6>[    4.656712] NET: Registered protocol family 17
+<6>[    4.656766] NET: Registered protocol family 15
+<6>[    4.656801] Bluetooth: L2CAP ver 2.14
+<6>[    4.656807] Bluetooth: L2CAP socket layer initialized
+<6>[    4.656835] Bluetooth: SCO (Voice Link) ver 0.6
+<6>[    4.656842] Bluetooth: SCO socket layer initialized
+<6>[    4.693974] Bluetooth: RFCOMM TTY layer initialized
+<6>[    4.694000] Bluetooth: RFCOMM socket layer initialized
+<6>[    4.694010] Bluetooth: RFCOMM ver 1.11
+<6>[    4.694018] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+<6>[    4.694145] lib80211: common routines for IEEE802.11 drivers
+<7>[    4.694158] lib80211_crypt: registered algorithm 'NULL'
+<6>[    4.694249] enter meson_pm_probe!
+<6>[    4.694276] meson_pm_probe done 0x0 200!
+<6>[    4.694347] VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+<4>[    4.695561] registered taskstats version 1
+<4>[    4.697189] regulator_init_complete: incomplete constraints, leaving axp20_buck3 on
+<4>[    4.697683] regulator_init_complete: incomplete constraints, leaving axp20_buck2 on
+<4>[    4.698169] regulator_init_complete: incomplete constraints, leaving axp20_ldo4 on
+<4>[    4.698648] regulator_init_complete: incomplete constraints, leaving axp20_ldo3 on
+<4>[    4.699127] regulator_init_complete: incomplete constraints, leaving axp20_ldo2 on
+<6>[    4.700119] aml_rtc aml_rtc: setting system clock to 2012-12-19 02:37:04 UTC (1355884624)
+<4>[    4.700238] Build the dev/console in kernel mode.
+<6>[    4.700379] init_post.
+<6>[    4.700894] Freeing init memory: 2880K
+<6>[    4.704096] run_init_process /init.
+<4>[    4.787313] UMP: UMP device driver  loaded
+<4>[    4.894672] Mali<2>:
+<4>[    4.894683] Mali<2>: Inserting Mali v14 device driver.
+<4>[    4.894694] Mali<2>: Compiled: Sep 20 2012, time: 16:14:57.
+<4>[    4.894712] Mali<2>: Driver revision:
+<4>[    4.895023] Mali<2>: Memory system initializing
+<4>[    4.895037] Mali<2>: Mali OS memory allocator created with max allocation size of 0x14800000 bytes, cpu_usage_adjust 0x00000000
+<4>[    4.895054] Mali<2>: Memory Validator 'Framebuffer' installed for Mali physical address base=0x84000000, size=0x06000000
+<4>[    4.904173] Mali<2>: Mali PP: Creating Mali PP core: Mali-400 PP
+<4>[    4.904190] Mali<2>: Mali PP: Base address of PP core: 0xd0068000
+<4>[    4.904271] Mali<2>: Found Mali GPU Mali-400 MP r1p0
+<4>[    4.904910] Mali<2>: Mali L2 cache: Creating Mali L2 cache: Mali-400 L2 cache
+<4>[    4.904945] Mali<2>: Mali MMU: Creating Mali MMU: Mali-400 MMU for GP
+<4>[    4.904990] Mali<2>: Mali GP: Creating Mali GP core: Mali-400 GP
+<4>[    4.905020] Mali<2>: Mali MMU: Creating Mali MMU: Mali-400 MMU for PP
+<4>[    4.905057] Mali<2>: Mali PP: Creating Mali PP core: Mali-400 PP
+<4>[    4.905068] Mali<2>: Mali PP: Base address of PP core: 0xd0068000
+<4>[    4.905986] Mali: Mali device driver loaded
+<3>[    5.295045] ======= led_control: flag = 0 ========
+<3>[    5.374784] ======= led_control: flag = 0 ========
+<6>[    5.444357] init: command 'loglevel' r=0
+<6>[    5.454305] init: command 'write' r=0
+<6>[    5.474299] init: command 'write' r=0
+<6>[    5.474364] init: command 'mkdir' r=0
+<6>[    5.474400] init: command 'mkdir' r=0
+<6>[    5.474440] init: command 'mkdir' r=0
+<6>[    5.474482] init: command 'mkdir' r=0
+<6>[    5.474503] init: command 'export' r=0
+<6>[    5.474518] init: command 'export' r=0
+<6>[    5.474532] init: command 'export' r=0
+<6>[    5.474544] init: command 'export' r=0
+<6>[    5.474557] init: command 'export' r=0
+<6>[    5.474569] init: command 'export' r=0
+<6>[    5.474590] init: command 'export' r=0
+<6>[    5.474603] init: command 'export' r=0
+<6>[    5.474615] init: command 'export' r=0
+<6>[    5.474627] init: command 'export' r=0
+<6>[    5.474640] init: command 'export' r=0
+<6>[    5.474654] init: command 'export' r=0
+<6>[    5.474724] init: command 'symlink' r=0
+<6>[    5.474776] init: command 'symlink' r=0
+<6>[    5.474834] init: command 'symlink' r=0
+<6>[    5.474874] init: command 'mkdir' r=0
+<6>[    5.474914] init: command 'mkdir' r=0
+<6>[    5.475135] init: command 'mount' r=0
+<6>[    5.475230] init: command 'mkdir' r=0
+<6>[    5.475291] init: command 'symlink' r=0
+<6>[    5.475347] init: command 'mkdir' r=0
+<6>[    5.475379] init: command 'mkdir' r=0
+<6>[    5.475408] init: command 'mkdir' r=0
+<6>[    5.475435] init: command 'mkdir' r=0
+<6>[    5.475562] init: command 'mount' r=0
+<6>[    5.475612] init: command 'mkdir' r=0
+<6>[    5.475723] init: command 'mount' r=0
+<6>[    5.475840] init: command 'write' r=0
+<6>[    5.475944] init: command 'write' r=0
+<6>[    5.476036] init: command 'write' r=0
+<6>[    5.476109] init: command 'write' r=0
+<6>[    5.476155] init: command 'write' r=0
+<6>[    5.476193] init: command 'write' r=0
+<6>[    5.476238] init: command 'write' r=0
+<6>[    5.476273] init: command 'mkdir' r=0
+<6>[    5.476482] init: command 'mount' r=0
+<6>[    5.476525] init: command 'chown' r=0
+<6>[    5.476551] init: command 'chown' r=0
+<6>[    5.476582] init: command 'chmod' r=0
+<6>[    5.476629] init: command 'write' r=-22
+<6>[    5.476729] init: command 'mkdir' r=0
+<6>[    5.476764] init: command 'chown' r=0
+<6>[    5.476787] init: command 'chmod' r=0
+<6>[    5.476831] init: command 'write' r=0
+<6>[    5.476905] init: command 'mkdir' r=0
+<6>[    5.476935] init: command 'chown' r=0
+<6>[    5.476969] init: command 'chmod' r=0
+<6>[    5.477002] init: command 'write' r=0
+<6>[    5.477027] init: command 'chmod' r=-2
+<6>[    5.477051] init: command 'mkdir' r=-2
+<6>[    5.477087] init: command 'chmod' r=-2
+<6>[    5.477102] init: processing action 0x329f0 (fs)
+<6>[    5.477113] init:
+<6>[    5.477116] === do_ubiattach start ===
+<6>[    5.477216] init: mtd partition 0, bootloader
+<6>[    5.477235] init: mtd partition 1, logo
+<6>[    5.477251] init: mtd partition 2, aml_logo
+<6>[    5.477265] init: mtd partition 3, recovery
+<6>[    5.477280] init: mtd partition 4, boot
+<6>[    5.477293] init: mtd partition 5, system
+<6>[    5.477308] init: mtd partition 6, cache
+<6>[    5.477330] init: mtd partition 7, userdata
+<6>[    5.477346] init: mtd partition 8, NFTL_Part
+<5>[    5.477820] UBI: attaching mtd5 to ubi0
+<5>[    5.477844] UBI: physical eraseblock size:   2097152 bytes (2048 KiB)
+<5>[    5.477854] UBI: logical eraseblock size:    2080768 bytes
+<5>[    5.477862] UBI: smallest flash I/O unit:    8192
+<5>[    5.477869] UBI: VID header offset:          8192 (aligned 8192)
+<5>[    5.477877] UBI: data offset:                16384
+<4>[    5.507896]  NAND bbt detect factory Bad block at 5a00000
+<5>[    5.767223] UBI: empty MTD device detected
+<5>[    5.771887] UBI: attached mtd5 to ubi0
+<5>[    5.771899] UBI: MTD device name:            "system"
+<5>[    5.771908] UBI: MTD device size:            512 MiB
+<5>[    5.771915] UBI: number of good PEBs:        255
+<5>[    5.771922] UBI: number of bad PEBs:         1
+<5>[    5.771929] UBI: max. allowed volumes:       128
+<5>[    5.771936] UBI: wear-leveling threshold:    4096
+<5>[    5.771942] UBI: number of internal volumes: 1
+<5>[    5.771958] UBI: number of user volumes:     1
+<5>[    5.771964] UBI: available PEBs:             0
+<5>[    5.771971] UBI: total number of reserved PEBs: 255
+<5>[    5.771978] UBI: number of PEBs reserved for bad PEB handling: 2
+<5>[    5.771986] UBI: max/mean erase counter: 21/8
+<5>[    5.771992] UBI: image sequence number: 0
+<6>[    5.772062] init: command 'ubiattach' r=0
+<5>[    5.773699] UBI: background thread "ubi_bgt0d" started, PID 63
+<5>[    6.097484] UBIFS: recovery needed
+<5>[    6.255224] UBIFS: recovery completed
+<5>[    6.255243] UBIFS: mounted UBI device 0, volume 0, name "system"
+<5>[    6.255255] UBIFS: file system size:   499384320 bytes (487680 KiB, 476 MiB, 240 LEBs)
+<5>[    6.255267] UBIFS: journal size:       24969216 bytes (24384 KiB, 23 MiB, 12 LEBs)
+<5>[    6.255278] UBIFS: media format:       w4/r0 (latest is w4/r0)
+<5>[    6.255287] UBIFS: default compressor: lzo
+<5>[    6.255295] UBIFS: reserved for root:  4952683 bytes (4836 KiB)
+<6>[    6.261027] init: command 'mount' r=0
+<6>[    6.261062] init:
+<6>[    6.261065] === do_ubiattach start ===
+<5>[    6.261478] UBI: attaching mtd7 to ubi1
+<5>[    6.261492] UBI: physical eraseblock size:   2097152 bytes (2048 KiB)
+<5>[    6.261501] UBI: logical eraseblock size:    2080768 bytes
+<5>[    6.261509] UBI: smallest flash I/O unit:    8192
+<5>[    6.261516] UBI: VID header offset:          8192 (aligned 8192)
+<5>[    6.261524] UBI: data offset:                16384
+<5>[    6.573936] UBI: empty MTD device detected
+<5>[    6.584003] UBI: attached mtd7 to ubi1
+<5>[    6.584016] UBI: MTD device name:            "userdata"
+<5>[    6.584024] UBI: MTD device size:            512 MiB
+<5>[    6.584031] UBI: number of good PEBs:        256
+<5>[    6.584038] UBI: number of bad PEBs:         0
+<5>[    6.584045] UBI: max. allowed volumes:       128
+<5>[    6.584052] UBI: wear-leveling threshold:    4096
+<5>[    6.584059] UBI: number of internal volumes: 1
+<5>[    6.584065] UBI: number of user volumes:     1
+<5>[    6.584081] UBI: available PEBs:             0
+<5>[    6.584088] UBI: total number of reserved PEBs: 256
+<5>[    6.584095] UBI: number of PEBs reserved for bad PEB handling: 2
+<5>[    6.584103] UBI: max/mean erase counter: 85/11
+<5>[    6.584110] UBI: image sequence number: 0
+<6>[    6.584180] init: command 'ubiattach' r=0
+<5>[    6.585372] UBI: background thread "ubi_bgt1d" started, PID 65
+<5>[    6.755588] UBIFS: recovery needed
+<5>[    7.025530] UBIFS: recovery completed
+<5>[    7.025550] UBIFS: mounted UBI device 1, volume 0, name "userdata"
+<5>[    7.025562] UBIFS: file system size:   501465088 bytes (489712 KiB, 478 MiB, 241 LEBs)
+<5>[    7.025583] UBIFS: journal size:       24969216 bytes (24384 KiB, 23 MiB, 12 LEBs)
+<5>[    7.025594] UBIFS: media format:       w4/r0 (latest is w4/r0)
+<5>[    7.025603] UBIFS: default compressor: lzo
+<5>[    7.025611] UBIFS: reserved for root:  4952683 bytes (4836 KiB)
+<6>[    7.031503] init: command 'mount' r=0
+<6>[    7.031641] yaffs: dev is 32505862 name is "mtdblock6" rw
+<6>[    7.031651] yaffs: passed flags ""
+<7>[    7.031660] yaffs: Attempting MTD mount of 31.6,"mtdblock6"
+<4>[    7.031738] yaffs2 check point success.
+<7>[    7.032852] yaffs: restored from checkpoint
+<7>[    7.033019] yaffs_read_super: isCheckpointed 1
+<6>[    7.033067] init: command 'mount' r=0
+<6>[    7.033105] init: processing action 0x32ae8 (post-fs)
+<6>[    7.037792] init: command 'chown' r=0
+<6>[    7.038882] init: command 'chmod' r=0
+<6>[    7.039009] init: command 'mount' r=0
+<6>[    7.042062] init: command 'chown' r=0
+<6>[    7.044154] init: command 'chmod' r=0
+<6>[    7.044237] init: command 'chown' r=0
+<6>[    7.044275] init: command 'chmod' r=0
+<6>[    7.044308] init: command 'chown' r=0
+<6>[    7.044346] init: command 'chmod' r=0
+<6>[    7.044376] init: command 'chown' r=0
+<6>[    7.044404] init: command 'chmod' r=0
+<6>[    7.046442] init: command 'mkdir' r=0
+<6>[    7.046470] init: processing action 0x32d00 (post-fs-data)
+<6>[    7.046505] init: command 'chown' r=0
+<6>[    7.046530] init: command 'chmod' r=0
+<6>[    7.047582] init: command 'mkdir' r=0
+<6>[    7.047629] init: command 'copy' r=-1
+<6>[    7.047660] init: command 'chown' r=-2
+<6>[    7.047680] init: command 'chmod' r=-2
+<6>[    7.047715] init: command 'copy' r=-1
+<6>[    7.047740] init: command 'chown' r=-2
+<6>[    7.047758] init: command 'chmod' r=-2
+<6>[    7.047792] init: command 'write' r=-2
+<6>[    7.048816] init: command 'mkdir' r=0
+<6>[    7.049817] init: command 'mkdir' r=0
+<6>[    7.050497] init: command 'mkdir' r=0
+<6>[    7.051176] init: command 'mkdir' r=0
+<6>[    7.052181] init: command 'mkdir' r=0
+<6>[    7.052858] init: command 'mkdir' r=0
+<6>[    7.053517] init: command 'mkdir' r=0
+<6>[    7.054355] init: command 'mkdir' r=0
+<6>[    7.055732] init: command 'mkdir' r=0
+<6>[    7.055761] init: command 'chmod' r=0
+<6>[    7.056785] init: command 'chmod' r=0
+<6>[    7.056819] init: command 'chown' r=0
+<6>[    7.056857] init: command 'chown' r=0
+<6>[    7.056883] init: command 'chown' r=0
+<6>[    7.057885] init: command 'mkdir' r=0
+<6>[    7.058888] init: command 'mkdir' r=0
+<6>[    7.059891] init: command 'mkdir' r=0
+<6>[    7.060906] init: command 'mkdir' r=0
+<6>[    7.061571] init: command 'mkdir' r=0
+<6>[    7.062561] init: command 'mkdir' r=0
+<6>[    7.063558] init: command 'mkdir' r=0
+<6>[    7.064659] init: command 'mkdir' r=0
+<6>[    7.064691] init: command 'chown' r=0
+<6>[    7.064726] init: command 'chmod' r=0
+<6>[    7.065397] init: command 'mkdir' r=0
+<6>[    7.066408] init: command 'mkdir' r=0
+<6>[    7.066585] init: command 'chown' r=0
+<6>[    7.066673] init: command 'chmod' r=0
+<6>[    7.066770] init: command 'chown' r=0
+<6>[    7.066851] init: command 'chmod' r=0
+<6>[    7.066904] init: command 'chown' r=-2
+<6>[    7.066959] init: command 'chmod' r=-2
+<6>[    7.066993] init: command 'mkdir' r=0
+<6>[    7.067008] init: processing action 0x37a08 (property_service_init)
+<6>[    7.079474] init: Created socket '/dev/socket/property_service' with mode '666', user '0', group '0'
+<6>[    7.079507] init: command 'property_service_init' r=0
+<6>[    7.079536] init: processing action 0x37a50 (signal_init)
+<6>[    7.079597] init: command 'signal_init' r=0
+<6>[    7.079616] init: processing action 0x37a98 (check_startup)
+<6>[    7.079661] init: command 'check_startup' r=0
+<6>[    7.079693] init: processing action 0x37ae0 (ubootenv_init)
+<5>[    7.079721] init: cannot find property:ro.mtd.ubootenv,  use 'ubootenv' as default.
+<3>[    7.079737] init: Cannot find ubootenv device: ubootenv
+<6>[    7.079763] init: command 'ubootenv_init' r=0
+<6>[    7.079780] init: processing action 0x33480 (boot)
+<6>[    7.079819] init: command 'setprop' r=0
+<6>[    7.080554] init: command 'ifup' r=0
+<6>[    7.080685] init: command 'hostname' r=0
+<6>[    7.080754] init: command 'domainname' r=0
+<6>[    7.081528] init: command 'mkdir' r=0
+<6>[    7.081564] init: command 'chmod' r=0
+<6>[    7.081595] init: command 'setrlimit' r=0
+<6>[    7.081646] init: command 'setprop' r=0
+<6>[    7.081683] init: command 'setprop' r=0
+<6>[    7.081725] init: command 'setprop' r=0
+<6>[    7.081795] init: command 'write' r=0
+<6>[    7.081861] init: command 'write' r=0
+<6>[    7.081989] init: command 'chown' r=0
+<6>[    7.082034] init: command 'chmod' r=0
+<6>[    7.082086] init: command 'chown' r=0
+<6>[    7.082117] init: command 'chmod' r=0
+<6>[    7.082265] init: command 'write' r=0
+<6>[    7.082343] init: command 'write' r=0
+<6>[    7.082389] init: command 'write' r=0
+<6>[    7.082423] init: command 'chown' r=-2
+<6>[    7.082445] init: command 'chown' r=-2
+<6>[    7.082476] init: command 'chown' r=-2
+<6>[    7.082496] init: command 'chown' r=-2
+<6>[    7.082516] init: command 'chown' r=-2
+<6>[    7.082557] init: command 'chown' r=0
+<6>[    7.082601] init: command 'chown' r=0
+<6>[    7.082630] init: command 'chown' r=0
+<6>[    7.082654] init: command 'chmod' r=0
+<6>[    7.082676] init: command 'chmod' r=0
+<6>[    7.082705] init: command 'chmod' r=0
+<6>[    7.082749] init: command 'chown' r=-2
+<6>[    7.082776] init: command 'chown' r=-2
+<6>[    7.082857] init: command 'chown' r=0
+<6>[    7.082927] init: command 'chown' r=0
+<6>[    7.082977] init: command 'chown' r=0
+<6>[    7.083010] init: command 'chown' r=0
+<6>[    7.083042] init: command 'chown' r=0
+<6>[    7.083080] init: command 'chown' r=0
+<6>[    7.083113] init: command 'chown' r=0
+<6>[    7.083162] init: command 'chown' r=0
+<6>[    7.083190] init: command 'chmod' r=-2
+<6>[    7.083223] init: command 'chmod' r=-2
+<6>[    7.083243] init: command 'chmod' r=-2
+<6>[    7.083293] init: command 'chown' r=0
+<6>[    7.083340] init: command 'chown' r=0
+<6>[    7.083377] init: command 'chown' r=0
+<6>[    7.083420] init: command 'chown' r=0
+<6>[    7.083477] init: command 'chown' r=0
+<6>[    7.083518] init: command 'chown' r=0
+<6>[    7.083614] init: command 'chown' r=0
+<6>[    7.083681] init: command 'chown' r=0
+<6>[    7.083758] init: command 'chown' r=0
+<6>[    7.083832] init: command 'chown' r=0
+<6>[    7.083866] init: command 'chmod' r=0
+<6>[    7.083891] init: command 'chmod' r=0
+<6>[    7.083998] init: command 'chmod' r=0
+<6>[    7.084037] init: command 'chmod' r=0
+<6>[    7.084065] init: command 'chmod' r=0
+<6>[    7.084103] init: command 'chmod' r=0
+<6>[    7.084162] init: command 'chmod' r=0
+<6>[    7.084226] init: command 'chmod' r=0
+<6>[    7.084278] init: command 'chmod' r=0
+<6>[    7.084333] init: command 'chmod' r=0
+<6>[    7.084381] init: command 'chown' r=0
+<6>[    7.084418] init: command 'chown' r=0
+<6>[    7.084463] init: command 'chown' r=0
+<6>[    7.084499] init: command 'chown' r=0
+<6>[    7.084534] init: command 'chown' r=0
+<6>[    7.084569] init: command 'chown' r=0
+<6>[    7.084614] init: command 'chown' r=0
+<6>[    7.084646] init: command 'chown' r=0
+<6>[    7.084672] init: command 'chmod' r=0
+<6>[    7.084695] init: command 'chmod' r=0
+<6>[    7.084730] init: command 'chmod' r=0
+<6>[    7.084754] init: command 'chmod' r=0
+<6>[    7.084777] init: command 'chmod' r=0
+<6>[    7.084801] init: command 'chmod' r=0
+<6>[    7.084832] init: command 'chmod' r=0
+<6>[    7.084858] init: command 'chmod' r=0
+<6>[    7.084882] init: command 'chmod' r=0
+<6>[    7.084931] init: command 'chown' r=0
+<6>[    7.084981] init: command 'chown' r=0
+<6>[    7.085019] init: command 'chown' r=0
+<6>[    7.085052] init: command 'chown' r=0
+<6>[    7.085092] init: command 'chown' r=0
+<6>[    7.085125] init: command 'chown' r=0
+<6>[    7.085156] init: command 'chown' r=0
+<6>[    7.085186] init: command 'chown' r=0
+<6>[    7.085228] init: command 'chown' r=0
+<6>[    7.085260] init: command 'chown' r=0
+<6>[    7.085291] init: command 'chown' r=0
+<6>[    7.085337] init: command 'chown' r=0
+<6>[    7.085365] init: command 'chmod' r=0
+<6>[    7.085390] init: command 'chmod' r=0
+<6>[    7.085413] init: command 'chmod' r=0
+<6>[    7.085436] init: command 'chmod' r=0
+<6>[    7.085468] init: command 'chmod' r=0
+<6>[    7.085493] init: command 'chmod' r=0
+<6>[    7.085516] init: command 'chmod' r=0
+<6>[    7.085538] init: command 'chmod' r=0
+<6>[    7.085561] init: command 'chmod' r=0
+<6>[    7.085591] init: command 'chmod' r=0
+<6>[    7.085615] init: command 'chmod' r=0
+<6>[    7.085639] init: command 'chmod' r=0
+<6>[    7.085689] init: command 'chown' r=0
+<6>[    7.085738] init: command 'chown' r=0
+<6>[    7.085814] init: command 'chown' r=0
+<6>[    7.085891] init: command 'chown' r=0
+<6>[    7.085961] init: command 'chown' r=0
+<6>[    7.086020] init: command 'chown' r=0
+<6>[    7.086104] init: command 'chown' r=0
+<6>[    7.086139] init: command 'chmod' r=0
+<6>[    7.086166] init: command 'chmod' r=0
+<6>[    7.086227] init: command 'chmod' r=0
+<6>[    7.086279] init: command 'chmod' r=0
+<6>[    7.086336] init: command 'chmod' r=0
+<6>[    7.086401] init: command 'chown' r=0
+<6>[    7.086460] init: command 'chmod' r=0
+<6>[    7.086498] init: command 'chown' r=0
+<6>[    7.086531] init: command 'chown' r=0
+<6>[    7.086568] init: command 'chown' r=0
+<6>[    7.086633] init: command 'chown' r=0
+<6>[    7.086724] init: command 'chown' r=0
+<6>[    7.086769] init: command 'chown' r=0
+<6>[    7.086804] init: command 'chown' r=0
+<6>[    7.086857] init: command 'chown' r=0
+<6>[    7.086894] init: command 'chown' r=0
+<6>[    7.086922] init: command 'chmod' r=0
+<6>[    7.086957] init: command 'chmod' r=0
+<6>[    7.086983] init: command 'chmod' r=0
+<6>[    7.087008] init: command 'chmod' r=0
+<6>[    7.087041] init: command 'chmod' r=0
+<6>[    7.087068] init: command 'chmod' r=0
+<6>[    7.087105] init: command 'chmod' r=0
+<6>[    7.087133] init: command 'chmod' r=0
+<6>[    7.087157] init: command 'chmod' r=0
+<6>[    7.087238] init: command 'chown' r=0
+<6>[    7.087302] init: command 'chown' r=0
+<6>[    7.087373] init: command 'chown' r=0
+<6>[    7.087432] init: command 'chown' r=0
+<6>[    7.087513] init: command 'chown' r=0
+<6>[    7.087586] init: command 'chown' r=0
+<6>[    7.087647] init: command 'chown' r=0
+<6>[    7.087695] init: command 'chmod' r=0
+<6>[    7.087753] init: command 'chmod' r=0
+<6>[    7.087798] init: command 'chmod' r=0
+<6>[    7.087852] init: command 'chmod' r=0
+<6>[    7.087898] init: command 'chmod' r=0
+<6>[    7.087941] init: command 'chmod' r=0
+<6>[    7.087995] init: command 'chmod' r=0
+<6>[    7.088025] init: command 'chmod' r=-2
+<6>[    7.090396] init: command 'chmod' r=0
+<6>[    7.090521] init: command 'chmod' r=0
+<6>[    7.090597] init: command 'chown' r=0
+<6>[    7.090651] init: command 'chown' r=0
+<6>[    7.090690] init: command 'chown' r=0
+<6>[    7.090731] init: command 'chmod' r=0
+<6>[    7.090759] init: command 'chmod' r=0
+<6>[    7.090794] init: command 'symlink' r=0
+<6>[    7.090975] init: command 'write' r=0
+<6>[    7.091051] init: command 'write' r=0
+<6>[    7.091123] init: command 'chown' r=0
+<6>[    7.091160] init: command 'chmod' r=0
+<6>[    7.091215] CPUFREQ: Per core conservative sysfs interface is deprecated - freq_step
+<6>[    7.091244] init: command 'write' r=0
+<6>[    7.091273] init: command 'chmod' r=-2
+<6>[    7.091295] init: command 'chmod' r=-2
+<6>[    7.091315] init: command 'chmod' r=-2
+<6>[    7.092696] init: command 'chmod' r=-2
+<6>[    7.092764] init: command 'chown' r=-2
+<6>[    7.092795] init: command 'chmod' r=-2
+<6>[    7.092836] init: command 'write' r=-2
+<6>[    7.092885] init: command 'chown' r=0
+<6>[    7.092939] init: command 'setprop' r=0
+<6>[    7.094369] init: command 'symlink' r=-1
+<6>[    7.094467] init: command 'chown' r=0
+<6>[    7.094524] init: command 'chown' r=0
+<6>[    7.094586] init: command 'chown' r=0
+<6>[    7.094629] init: command 'chown' r=0
+<6>[    7.094672] init: command 'chown' r=0
+<6>[    7.094757] init: command 'setprop' r=0
+<6>[    7.094813] init: command 'setprop' r=0
+<6>[    7.094874] init: command 'setprop' r=0
+<6>[    7.094923] init: command 'setprop' r=0
+<6>[    7.094980] init: command 'setprop' r=0
+<6>[    7.095030] init: command 'setprop' r=0
+<6>[    7.095085] init: command 'setprop' r=0
+<6>[    7.095112] init: command 'setprop' r=0
+<5>[    7.098022] init: starting 'console'
+<5>[    7.098359] init: running 'console' (pid: 68)
+<5>[    7.100413] init: starting 'display'
+<5>[    7.100727] init: running 'display' (pid: 69)
+<5>[    7.102504] init: starting 'servicemanager'
+<5>[    7.103411] init: 'console' (pid: 68) started
+<5>[    7.124742] init: 'servicemanager' (pid: 70) started
+<5>[    7.125364] init: 'display' (pid: 69) started
+<5>[    7.125571] init: running 'servicemanager' (pid: 70)
+<5>[    7.128222] init: starting 'vold'
+<5>[    7.128547] init: running 'vold' (pid: 71)
+<5>[    7.130046] init: starting 'audio'
+<5>[    7.130390] init: running 'audio' (pid: 72)
+<3>[    7.130875] init: cannot find '/system/bin/memsicd', disabling 'memsicd'
+<6>[    7.132038] init: command 'class_start' r=0
+<5>[    7.133745] init: starting 'netd'
+<5>[    7.144733] init: 'audio' (pid: 72) started
+<6>[    7.145360] init: Created socket '/dev/socket/vold' with mode '666', user '0', group '1009'
+<5>[    7.145431] init: 'vold' (pid: 71) started
+<5>[    7.145750] init: running 'netd' (pid: 73)
+<6>[    7.146629] init: Created socket '/dev/socket/dnsproxyd' with mode '660', user '0', group '3003'
+<6>[    7.146748] init: Created socket '/dev/socket/netd' with mode '660', user '0', group '1000'
+<5>[    7.146808] init: 'netd' (pid: 73) started
+<5>[    7.155467] init: starting 'debuggerd'
+<5>[    7.155799] init: running 'debuggerd' (pid: 74)
+<5>[    7.157255] init: starting 'surfaceflinger'
+<5>[    7.157564] init: running 'surfaceflinger' (pid: 75)
+<5>[    7.159015] init: starting 'zygote'
+<5>[    7.159342] init: running 'zygote' (pid: 76)
+<5>[    7.160815] init: starting 'drm'
+<5>[    7.161137] init: running 'drm' (pid: 77)
+<5>[    7.162268] init: starting 'media'
+<5>[    7.162590] init: running 'media' (pid: 78)
+<5>[    7.163721] init: starting 'dbus'
+<6>[    7.224659] init: Created socket '/dev/socket/zygote' with mode '660', user '0', group '1000'
+<5>[    7.224741] init: 'zygote' (pid: 76) started
+<5>[    7.226902] init: 'surfaceflinger' (pid: 75) started
+<5>[    7.232311] init: 'debuggerd' (pid: 74) started
+<5>[    7.234728] init: 'drm' (pid: 77) started
+<5>[    7.244934] init: 'media' (pid: 78) started
+<6>[    7.246500] init: Created socket '/dev/socket/dbus' with mode '660', user '1002', group '1002'
+<5>[    7.246793] init: 'dbus' (pid: 79) started
+<5>[    7.247036] init: running 'dbus' (pid: 79)
+<5>[    7.277423] init: starting 'installd'
+<5>[    7.277760] init: running 'installd' (pid: 80)
+<5>[    7.278913] init: starting 'flash_recovery'
+<5>[    7.279235] init: running 'flash_recovery' (pid: 81)
+<5>[    7.280719] init: starting 'keystore'
+<5>[    7.281038] init: running 'keystore' (pid: 82)
+<5>[    7.282192] init: starting 'remotecfg'
+<5>[    7.282515] init: running 'remotecfg' (pid: 83)
+<6>[    7.282610] init: command 'class_start' r=0
+<6>[    7.282696] init: processing action 0x37b28 (queue_propety_triggers)
+<6>[    7.282809] init: command 'queue_propety_triggers' r=0
+<6>[    7.282846] init: processing action 0x35218 (nonencrypted)
+<6>[    7.282866] init: command 'class_start' r=0
+<6>[    7.282881] init: processing action 0x35ba0 (property:persist.sys.usb.config=*)
+<6>[    7.282939] init: command 'setprop' r=0
+<6>[    7.282973] init: command 'class_start' r=0
+<6>[    7.282987] init: processing action 0x36578 (property:hw.nophone=false)
+<5>[    7.284633] init: 'remotecfg' (pid: 83) started
+<6>[    7.285305] init: Created socket '/dev/socket/keystore' with mode '666', user '0', group '0'
+<5>[    7.285617] init: 'keystore' (pid: 82) started
+<5>[    7.286193] init: 'flash_recovery' (pid: 81) started
+<6>[    7.286795] init: Created socket '/dev/socket/installd' with mode '600', user '1000', group '1000'
+<5>[    7.286872] init: 'installd' (pid: 80) started
+<5>[    7.318060] init: starting 'ril-daemon'
+<5>[    7.318398] init: running 'ril-daemon' (pid: 85)
+<6>[    7.318520] init: command 'start' r=0
+<6>[    7.318598] init: processing action 0x35800 (property:sys.usb.config=mass_storage,adb)
+<3>[    7.318766] android_usb: already disabled
+<6>[    7.318812] init: command 'write' r=0
+<6>[    7.318929] init: command 'write' r=0
+<6>[    7.319031] init: command 'write' r=0
+<6>[    7.319136] init: command 'write' r=0
+<6>[    7.319218] adb_bind_config
+<6>[    7.319271] init: command 'write' r=0
+<5>[    7.319357] init: starting 'adbd'
+<5>[    7.319678] init: running 'adbd' (pid: 86)
+<6>[    7.319795] init: command 'start' r=0
+<6>[    7.319905] init: command 'setprop' r=0
+<5>[    7.320543] init: 'adbd' (pid: 86) started
+<6>[    7.321733] warning: `adbd' uses 32-bit capabilities (legacy support in use)
+<6>[    7.322632] init: Created socket '/dev/socket/rild-debug' with mode '660', user '1001', group '1000'
+<6>[    7.322773] init: Created socket '/dev/socket/rild' with mode '660', user '0', group '1001'
+<5>[    7.322856] init: 'ril-daemon' (pid: 85) started
+<6>[    7.323022] adb_open
+<6>[    7.404306] init: waitpid returned pid 83, status = 00000000
+<5>[    7.404339] init: process 'remotecfg', pid 83 exited
+<6>[    7.474115] android_work: sent uevent USB_STATE=CONNECTED
+<6>[    7.539239] android_usb gadget: high speed config #1: android
+<6>[    7.539419] adjust_gadget_wake_lock lock
+<6>[    7.539486] android_work: sent uevent USB_STATE=CONFIGURED
+<4>[    7.726852] tvmode set to panel
+<4>[    7.726860]
+<4>[    7.726874] new mode panel
+<4>[    7.726878]  set ok
+<4>[    7.727049] osd0=>x:0 ,y:0,w:800,h:480
+<4>[    7.727054]  osd1=> x:0,y:0,w:18,h:18
+<6>[    7.755470] init: waitpid returned pid 69, status = 00000000
+<5>[    7.755491] init: process 'display', pid 69 exited
+<4>[    8.200881] LINEOUTR:connect=1
+<4>[    8.200893] LINEOUTL:connect=1
+<4>[    8.200925] HP_R:connect=1
+<4>[    8.200932] HP_L:connect=1
+<4>[    8.200971] LINEINR:connect=1
+<4>[    8.200978] LINEINL:connect=1
+<4>[    8.201007] SPEAKER:connect=1
+<6>[    8.204133] init: waitpid returned pid 72, status = 00000200
+<5>[    8.204155] init: process 'audio', pid 72 exited
+<3>[    9.693313] ======= led_control: flag = 0 ========
+<6>[    9.774785] init: waitpid returned pid 81, status = 00000000
+<5>[    9.774807] init: process 'flash_recovery', pid 81 exited
+<4>[   10.141461] Mali<2>: Session starting
+<5>[   10.210971] init: starting 'bootanim'
+<5>[   10.211346] init: running 'bootanim' (pid: 129)
+<5>[   10.224877] init: 'bootanim' (pid: 129) started
+<4>[   10.655760] Mali<2>: Session starting
+<4>[   11.441977] ***Entered sound/soc/aml/aml_dai.c:aml_dai_hw_params
+<4>[   11.442534] iec958 mode PCM16
+<4>[   11.442545] IEC958 16bit
+<4>[   11.442555] HDMI: aout notify rate 48000
+<4>[   11.442561] HDMI: aout notify format PCM
+<4>[   11.644041] aml_m3_codec_mute mute=0
+<4>[   16.644127] Headphone unpluged
+<4>[   24.934015] nftl creat stucture completely free blk: 100 erased blk: 1132
+<3>[   29.215101] ======= led_control: flag = 0 ========
+<6>[   29.272872] request_suspend_state: wakeup (3->0) at 29268947003 (2012-12-19 02:37:29.072748000 UTC)
+<4>[   29.387779] video clone try be changed to 0 by WindowManagerPo
+<4>[   29.388387] vfm_map_store:rm default_ext
+<4>[   29.389000] vfm_map_store:add default_ext vdin vm amvideo
+<6>[   29.996284] acc_open
+<6>[   29.996313] acc_release
+<6>[   30.257048] init: processing action 0x377b8 (property:dev.bootcomplete=1)
+<6>[   30.257159] init: command 'chown' r=0
+<6>[   30.257263] init: command 'write' r=0
+<5>[   30.258338] init: starting 'usbpm'
+<5>[   30.258674] init: running 'usbpm' (pid: 211)
+<6>[   30.258795] init: command 'start' r=0
+<5>[   30.280751] init: 'usbpm' (pid: 211) started
+<3>[   30.342846] ======= led_control: flag = 0 ========
+<3>[   30.345519] ======= led_control: flag = 0 ========
+<3>[   31.341943] ======= led_control: flag = 0 ========
+<3>[   31.350296] ======= led_control: flag = 0 ========
+<4>[   31.632538] Mali<2>: Session starting
+<3>[   32.346615] ======= led_control: flag = 0 ========
+<3>[   32.348041] ======= led_control: flag = 0 ========
+<3>[   33.353309] ======= led_control: flag = 0 ========
+<3>[   33.355053] ======= led_control: flag = 0 ========
+<3>[   34.374811] ======= led_control: flag = 0 ========
+<3>[   34.376685] ======= led_control: flag = 0 ========
+<3>[   35.382074] ======= led_control: flag = 0 ========
+<3>[   35.383560] ======= led_control: flag = 0 ========
+<4>[   35.856998] Mali<2>: Session starting
+<4>[   37.301995] nftl release flush cache data: 0
+<4>[   37.692753] Mali<2>: Session starting
+<5>[   38.207178] init: service 'bootanim' (pid: 129) is being killed
+<4>[   38.228456] Mali<2>: Session has ended
+<6>[   38.228738] init: waitpid returned pid 129, status = 00000009
+<5>[   38.228756] init: process 'bootanim', pid 129 exited
+<4>[   41.313234] nftl release flush cache data: 0
+<4>[   41.339037] nftl release flush cache data: 0
+<3>[   41.391055] ======= led_control: flag = 0 ========
+<3>[   41.392568] ======= led_control: flag = 0 ========
+<3>[   42.391180] ======= led_control: flag = 0 ========
+<3>[   42.392888] ======= led_control: flag = 0 ========
+<3>[   46.391075] ======= led_control: flag = 0 ========
+<3>[   46.392609] ======= led_control: flag = 0 ========
+<3>[   47.391088] ======= led_control: flag = 0 ========
+<3>[   47.393259] ======= led_control: flag = 0 ========
+<4>[   48.305732] amlogic camera driver: gc0308_v4l2_init.
+<3>[   48.391198] ======= led_control: flag = 0 ========
+<3>[   48.393543] ======= led_control: flag = 0 ========
+<4>[   48.395556] +++found a init function, and run it..
+shell@android:/ $

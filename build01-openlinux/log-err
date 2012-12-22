@@ -1,0 +1,5 @@
+
+  HOSTCC  usr/gen_init_cpio
+  /home/tmpaml/srcs/arm_ref/scripts/gen_initramfs_list.sh: Cannot open '../android/device/amlogic/NXM727MC_CTS/images//root/'
+
+

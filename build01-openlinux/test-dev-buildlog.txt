@@ -1,0 +1,140 @@
+
+
+[1] Fail at initramfs: 
+
+  /home//tmpaml/srcs/arm_ref/scripts/gen_initramfs_list.sh: 
+  Cannot open '../android/device/amlogic/NXM727MC_CTS/images//root/'
+
+Resolution: remove the string in .config. 
+  - CONFIG_INITRAMFS_SOURCE="../android/device/amlogic/NXM727MC_CTS/images//root/"
+  + CONFIG_INITRAMFS_SOURCE=""
+
+
+[2] Fail at 
+
+  CC      drivers/amlogic/hdmi/hdmi_tx/m3/hdmi_tx_hw.o
+  make[4]: *** No rule to make target `drivers/amlogic/hdmi/hdmi_tx/hdmi_tx_hdcp.o', 
+               needed by `drivers/amlogic/hdmi/hdmi_tx/built-in.o'.  Stop.
+
+Resolution: disable amlogic hdcp in config. 
+  1054c1054
+  - CONFIG_AML_HDMI_TX_HDCP=y
+  + # CONFIG_AML_HDMI_TX_HDCP is not set
+
+
+[3] Failed reference: /home//tmpaml/srcs/arm_ref/drivers/amlogic/...
+
+  drivers/built-in.o: In function `axp_power_off':
+   /.../power/axp_power/axp-mfd.c:237: undefined reference to `pmu_pwroff_vol'
+   /.../power/axp_power/axp-mfd.c:237: undefined reference to `pmu_pwroff_vol'
+  drivers/built-in.o: In function `axp20_shutdown':
+   /.../power/axp_power/axp20-sply.c:1952: undefined reference to `pmu_shutdown_chgcur'
+   /.../power/axp_power/axp20-sply.c:1952: undefined reference to `pmu_shutdown_chgcur'
+  drivers/built-in.o: In function `axp_lateresume':
+   /.../power/axp_power/axp20-sply.c:1105: undefined reference to `pmu_resume_chgcur'
+   /.../power/axp_power/axp20-sply.c:1105: undefined reference to `pmu_resume_chgcur'
+  drivers/built-in.o: In function `axp20_resume':
+   /.../power/axp_power/axp20-sply.c:1927: undefined reference to `pmu_resume_chgcur'
+   /.../power/axp_power/axp20-sply.c:1927: undefined reference to `pmu_resume_chgcur'
+  drivers/built-in.o: In function `axp20_suspend':
+   /.../power/axp_power/axp20-sply.c:1810: undefined reference to `pmu_suspend_chgcur'
+   /.../power/axp_power/axp20-sply.c:1810: undefined reference to `pmu_suspend_chgcur'
+  drivers/built-in.o: In function `axp_charging_monitor':
+   /.../power/axp_power/axp20-sply.c:1340: undefined reference to `pmu_usbcur_limit'
+   /.../power/axp_power/axp20-sply.c:1340: undefined reference to `pmu_usbcur_limit'
+   /.../power/axp_power/axp20-sply.c:1342: undefined reference to `pmu_usbcur'
+   /.../power/axp_power/axp20-sply.c:1342: undefined reference to `pmu_usbcur'
+   /.../power/axp_power/axp20-sply.c:1258: undefined reference to `pmu_battery_rdc'
+   /.../power/axp_power/axp20-sply.c:1258: undefined reference to `pmu_battery_rdc'
+  drivers/built-in.o: In function `axp_battery_probe':
+   /.../power/axp_power/axp20-sply.c:1530: undefined reference to `pmu_usbvol_limit'
+   /.../power/axp_power/axp20-sply.c:1532: undefined reference to `pmu_usbvol'
+   /.../power/axp_power/axp20-sply.c:1544: undefined reference to `pmu_usbcur_limit'
+   /.../power/axp_power/axp20-sply.c:1546: undefined reference to `pmu_usbcur'
+   /.../power/axp_power/axp20-sply.c:1568: undefined reference to `pmu_bat_para2'
+   /.../power/axp_power/axp20-sply.c:1574: undefined reference to `pmu_bat_para5'
+   /.../power/axp_power/axp20-sply.c:1582: undefined reference to `pmu_bat_para9'
+   /.../power/axp_power/axp20-sply.c:1584: undefined reference to `pmu_bat_para10'
+   /.../power/axp_power/axp20-sply.c:1586: undefined reference to `pmu_bat_para11'
+   /.../power/axp_power/axp20-sply.c:1588: undefined reference to `pmu_bat_para12'
+   /.../power/axp_power/axp20-sply.c:1568: undefined reference to `pmu_bat_para2'
+   /.../power/axp_power/axp20-sply.c:1566: undefined reference to `pmu_bat_para1'
+   /.../power/axp_power/axp20-sply.c:1570: undefined reference to `pmu_bat_para3'
+   /.../power/axp_power/axp20-sply.c:1572: undefined reference to `pmu_bat_para4'
+   /.../power/axp_power/axp20-sply.c:1570: undefined reference to `pmu_bat_para3'
+   /.../power/axp_power/axp20-sply.c:1572: undefined reference to `pmu_bat_para4'
+   /.../power/axp_power/axp20-sply.c:1576: undefined reference to `pmu_bat_para6'
+   /.../power/axp_power/axp20-sply.c:1578: undefined reference to `pmu_bat_para7'
+   /.../power/axp_power/axp20-sply.c:1580: undefined reference to `pmu_bat_para8'
+   /.../power/axp_power/axp20-sply.c:1590: undefined reference to `pmu_bat_para13'
+   /.../power/axp_power/axp20-sply.c:1594: undefined reference to `pmu_bat_para15'
+   /.../power/axp_power/axp20-sply.c:1592: undefined reference to `pmu_bat_para14'
+   /.../power/axp_power/axp20-sply.c:1596: undefined reference to `pmu_bat_para16'
+   /.../power/axp_power/axp20-sply.c:1609: undefined reference to `pmu_pwrnoe_time'
+   /.../power/axp_power/axp20-sply.c:1609: undefined reference to `pmu_pwrnoe_time'
+   /.../power/axp_power/axp20-sply.c:1621: undefined reference to `pmu_pekon_time'
+   /.../power/axp_power/axp20-sply.c:1639: undefined reference to `pmu_peklong_time'
+   /.../power/axp_power/axp20-sply.c:1650: undefined reference to `pmu_pekoff_en'
+   /.../power/axp_power/axp20-sply.c:1659: undefined reference to `pmu_pwrok_time'
+   /.../power/axp_power/axp20-sply.c:1670: undefined reference to `pmu_pekoff_time'
+   /.../power/axp_power/axp20-sply.c:1682: undefined reference to `pmu_intotp_en'
+   /.../power/axp_power/axp20-sply.c:1723: undefined reference to `pmu_battery_rdc'
+   /.../power/axp_power/axp20-sply.c:1733: undefined reference to `pmu_suspend_chgcur'
+
+Resolution: disable AXP power drivers
+  @@ -845,12 +845,10 @@
+  -CONFIG_AW_AXP=y
+  +# CONFIG_AW_AXP is not set
+  -CONFIG_AW_AXP20=y
+  -CONFIG_AXP_CHARGEINIT=y
+  -CONFIG_AXP_CHGCHANGE=y
+  +# CONFIG_AW_AXP20 is not set
+
+
+[4] Failed reference: /home//tmpaml/srcs/arm_ref/sound/...
+
+ sound/built-in.o: In function `aml_audio_clock_gating_enable':
+  /.../sound/soc/aml/aml_pcm.c:160: undefined reference to `aml_m3_is_hp_pluged'
+  /.../sound/soc/aml/aml_pcm.c:164: undefined reference to `mute_spk'
+ sound/built-in.o: In function `aml_audio_clock_gating_disable':
+  /.../sound/soc/aml/aml_pcm.c:141: undefined reference to `mute_spk'
+ sound/built-in.o: In function `aml_m3_hp_detect_queue':
+  /.../sound/soc/aml/aml_m3.c:152: undefined reference to `aml_m3_is_hp_pluged'
+  /.../sound/soc/aml/aml_m3.c:171: undefined reference to `mute_spk'
+  /.../sound/soc/aml/aml_m3.c:161: undefined reference to `mute_spk'
+ sound/built-in.o: In function `aml_m3_set_bias_level':
+  /.../sound/soc/aml/aml_m3.c:102: undefined reference to `mute_spk'
+ sound/built-in.o: In function `aml_m3_reset':
+  /.../sound/soc/aml/aml_m3_codec.c:173: undefined reference to `aml_m3_is_hp_pluged'
+  /.../sound/soc/aml/aml_m3_codec.c:184: undefined reference to `mute_spk'
+  /.../sound/soc/aml/aml_m3_codec.c:177: undefined reference to `mute_spk'
+ make: *** [.tmp_vmlinux1] Error 1
+
+Resolution: disable all the lines
+  line 160..164, 141
+
+
+[5] Failed linking: no machine record defined
+
+  //home//bin/arm-2010q1/bin/arm-none-linux-gnueabi-ld -EL  -p --no-undefined -X 
+  --build-id -o .tmp_vmlinux1 -T arch/arm/kernel/vmlinux.lds arch/arm/kernel/head.o 
+  arch/arm/kernel/init_task.o  init/built-in.o --start-group  usr/built-in.o  
+  arch/arm/kernel/built-in.o  arch/arm/mm/built-in.o  arch/arm/common/built-in.o  
+  arch/arm/mach-meson3/built-in.o  arch/arm/vfp/built-in.o  kernel/built-in.o  
+  mm/built-in.o  fs/built-in.o  ipc/built-in.o  security/built-in.o  
+  crypto/built-in.o  block/built-in.o  arch/arm/lib/lib.a  lib/lib.a  
+  arch/arm/lib/built-in.o  lib/built-in.o  drivers/built-in.o  sound/built-in.o  
+  firmware/built-in.o  net/built-in.o --end-group
+
+  //home//bin/arm-2010q1/bin/arm-none-linux-gnueabi-ld: no machine record defined
+  //home//bin/arm-2010q1/bin/arm-none-linux-gnueabi-ld: no machine record defined
+  //home//bin/arm-2010q1/bin/arm-none-linux-gnueabi-ld: no machine record defined
+  
+  [@localhost arm_ref]$ vi arch/arm/kernel/vmlinux.lds
+  __arch_info_begin = .;
+   *(.arch.info.init)
+  __arch_info_end = .;
+
+Resolution: need to add a board file. 
+
+
