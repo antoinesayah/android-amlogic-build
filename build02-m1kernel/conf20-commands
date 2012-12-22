@@ -1,0 +1,228 @@
+
+$ tar zxf ../arc-amlogic/arm_ref-build_system_2011-07-26-14.00-svn2028.tar.gz
+$ cd arm_ref/
+$ tar zxf ../../arc-amlogic/amlogic-gpl-code-release/2012-11-20/m1-kernel-android-2012-11-20-git-5d0f6b8e93.tar.gz
+
+$ cd m1-kernel-android/
+$ cp -a env.sh env.sh-original
+
+#### Edit env.sh manually, then run "source env.sh":
+
+$ diff -u env.sh-original env.sh
+-export CROSS_COMPILE=arm-none-linux-gnueabi-
++#export CROSS_COMPILE=arm-none-linux-gnueabi-
++export CROSS_COMPILE=/$HOME/bin/arm-2010q1/bin/arm-none-linux-gnueabi-
+
+
+#### make oldconfig changes:
+#
+#### To add later manually:
+# -CONFIG_MACH_MESON3_M723MC=y
+# -CONFIG_GENERIC_ALLOCATOR=y
+# 
+#### To remove: watch dog after gpio and gps, vdec after av streaming before hdmi
+# +CONFIG_AML_WATCHDOG=y
+# +CONFIG_AM_VDEC_AVS=y
+# 
+#### To add back??: after bt, in video output module under display driver, before osd module, before av streaming 
+# -CONFIG_AML_TCON_KR070PC7S=y
+
+$ cp ../../../arc-amlogic/test-config-original .config
+
+
+[@localhost m1-kernel-android]$ make oldconfig
+
+scripts/kconfig/conf -o arch/arm/Kconfig
+*
+* Restart config...
+*
+*
+* Meson3 platform type
+*
+     ---------------------------------------------------------------------------------------power_off_backlight
+     ------------------------------------------------------------------------------------PHYS_MEM_SIZE 1G
+     ------------------------------------------------------------------------------OSD_PANEL_PIX 480
+     ---------------------------------------------------------------------aml_m3_is_hp_plugged()
+Support M3 (M3_SKT_V1) platform (MACH_MESON3_REFF01) [N/y/?] (NEW)                     1
+Support M3 (WA) platform (MACH_MESON3_REFF02) [N/y/?] (NEW)                    y
+Support M3 (Shuttle) platform (MACH_MESON3_REFF03) [N/y/?] (NEW)               y       3
+Support M3 (Ramos) platform (MACH_MESON3_REFF04) [N/y/?] (NEW)                 y
+Support M3 (SOCKET) platform (MACH_MESON3_REFF05) [N/y/?] (NEW)
+Support M3 (Ainol) platform (MACH_MESON3_REFF06) [N/y/?] (NEW)                 y
+Support M3 (Malata) platform (MACH_MESON3_REFF07) [N/y/?] (NEW)                y
+Support M3 F08 platform (MACH_MESON3_REFF08) [N/y/?] (NEW)                     y       8
+Support M3 F09 platform (MACH_MESON3_REFF09) [N/y/?] (NEW)                     y
+Support M3 (Asus) MBX platform (MACH_MESON3_REFF10) [N/y/?] (NEW)              y
+Support M3 (Gadmei) platform (MACH_MESON3_REFF11) [N/y/?] (NEW)                y          11,11-2,11-mrvl
+Support M3 (Gadmei Portrait 1280*800) (MACH_MESON3_REFF11_P800) [N/y/?] (NEW)  y          11-p800
+Support M3 (Gadmei BC 4329) (MACH_MESON3_REFF11_4329) [N/y/?] (NEW)            y          11-4329
+Support MT720 (Keenhi M3 1024*600) platform (MACH_MESON3_REFF14) [N/y/?] (NEW) y
+Support M3 MBX platform (MACH_MESON3_REFF16) [N/y/?] (NEW)                                16
+Support M3(lenovo) MBX platform (MACH_MESON3_REFF16_1) [N/y/?] (NEW)
+Support M3 Bestv MBX platform (MACH_MESON3_REFF20) [N/y/?] (NEW)                          20
+Support M3 PBI MBX platform (MACH_MESON3_REFF33) [N/y/?] (NEW)                            33
+Support M3 NGN MBX platform (MACH_MESON3_REFF34) [N/y/?] (NEW)                            34
+Support M3 NGN MBX platform (MACH_MESON3_REFF34_1) [N/y/?] (NEW)               y
+Support M3 NGN MBX platform (MACH_MESON3_REFF34_2) [N/y/?] (NEW)
+
+* Amlogic Watchdog Timer Support
+*
+Amlogic Watchdog (AML_WATCHDOG) [Y/n/m/?] (NEW)
+
+* Amlogic USB Support
+*
+Amloigc usb host controler dwc_otg support (USB_DWC_OTG_HCD) [Y/n/?] y
+  USB High speed electric test support (USB_HOST_ELECT_TEST) [Y/n/?] y
+  Disable DWC OTG USB NAK ISR (DWC_USB_NAK_IN_TIMER) [N/y/?] n
+Amlogic usb controller power/clock/tuning control (USB_PHY_CONTROL) [Y/n/?] y
+Amlogic usb D+ pullup disable when initial (USB_DPLINE_PULLUP_DISABLE) [N/y/?] (NEW)
+
+* AMLOGIC NAND Flash support
+*
+Amlogic NAND FLASH M1/M2/M3 SUPPORT (AM_NAND) [Y/n/?] y
+  use nand rbpin (A3/M3 optional) (AM_NAND_RBPIN) [Y/n] y
+  use aml nand env (/dev/nand_env) (AML_NAND_ENV) [Y/n] y
+  Amlogic NFTL (NAND Flash Translation Layer) support (AML_NFTL) [Y/n/m/?] y
+  Meson NAND NEW_FTL support (AML_NFTL_NEW) [N/m/y/?] (NEW)
+
+* Amlogic video output module
+*
+TM070 panel driver (AML_TCON_TM070) [N/m/y/?] (NEW)
+
+* AMLOGIC AV Streaming devices
+*
+AMLOGIC AVS Video Decoder (AM_VDEC_AVS) [Y/n/m/?] (NEW)
+
+#
+# configuration written to .config
+#
+
+
+$ cp .config ../../../arc-amlogic/conf21
+
+
+#### Remove: watch dog after gpio and gps, vdec after av streaming before hdmi
+# +CONFIG_AML_WATCHDOG=y
+# +CONFIG_AM_VDEC_AVS=y
+
+$ cp .config ../../../arc-amlogic/conf22
+$ time make
+
+#### Error: Run "time make"
+  HOSTCC  usr/gen_init_cpio
+  /home//tmpaml/srcs2/arm_ref/m1-kernel-android/scripts/gen_initramfs_list.sh: 
+          Cannot open '../android/device/amlogic/NXM727MC_CTS/images//root/'
+
+#### Manually change .config: 
+   CONFIG_BLK_DEV_INITRD=y
+  -CONFIG_INITRAMFS_SOURCE="../android/device/amlogic/NXM727MC_CTS/images//root/"
+  +CONFIG_INITRAMFS_SOURCE=""
+
+#### Disable hdcp and axp power driver: Using "make menuconfig"
+
+  - CONFIG_AML_HDMI_TX_HDCP=y
+  + # CONFIG_AML_HDMI_TX_HDCP is not set
+
+  -CONFIG_AW_AXP=y
+  +# CONFIG_AW_AXP is not set
+  -CONFIG_AW_AXP20=y
+  -CONFIG_AXP_CHARGEINIT=y
+  -CONFIG_AXP_CHGCHANGE=y
+  +# CONFIG_AW_AXP20 is not set
+
+####
+
+$ cp .config ../../../arc-amlogic/conf23
+$ time make
+
+#### Error: undefined reference to power_off_backlight, mute_spk, alm_m3_is_hp_pluged, mute_headphone
+
+
+<5>[    0.000000] Kernel command line: init=/init console=ttyS0,115200n8 nohlt a9_clk=600M clk81=192M quiet hdmitx=vdacoff,powermode1,unplug_powerdown mem=1024M vmalloc=200M logo=osd1,loaded,0x84100000,lcd,full
+<4>[    0.000000] (CTS_DDR_CLK) = 528MHz
+<4>[    0.000000] (CTS_MALI_CLK) = 264MHz
+<4>[    0.000000] (CTS_A9_CLK) = 600MHz
+<4>[    0.000000] CLK81(from MSR_CLK_REG) = 192000000MHz, a9_clk(from args) = 192000000
+<4>[    0.000000] CLK81 is the same as args
+<4>[    0.000000] HDMI DEBUG: hdmitx_boot_para_setup [1430]hdmi: set init powermode 1
+<4>[    0.000000] osd1:1
+<4>[    0.000000] loaded:268435459
+<4>[    0.000000] logo has been loaded
+<4>[    0.000000] lcd:12
+<4>[    0.000000] full:2
+<6>[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>[    0.000000] Memory: 64MB 364MB 56MB 456MB = 940MB total
+<5>[    0.000000] Memory: 942784k/942784k available, 19776k reserved, 466944K highmem
+<5>[    0.000000] Virtual kernel memory layout:
+<5>[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+<5>[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+<5>[    0.000000]     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+<5>[    0.000000]     vmalloc : 0xe4000000 - 0xf0000000   ( 192 MB)
+<5>[    0.000000]     lowmem  : 0xc0000000 - 0xe3800000   ( 568 MB)
+<5>[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+<5>[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+<5>[    0.000000]       .init : 0xc0008000 - 0xc02d8000   (2880 kB)
+<5>[    0.000000]       .text : 0xc02d8000 - 0xc0a3f024   (7581 kB)
+<5>[    0.000000]       .data : 0xc0a40000 - 0xc0a898c0   ( 295 kB)
+<6>[    0.000000] SLUB: Genslabs=11, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+<6>[    0.000000] Hierarchical RCU implementation.
+<6>[    0.000000] NR_IRQS:128
+<4>[    0.000000] Console: colour dummy device 80x30
+<6>[    0.000000] console [ttyS0] enabled
+
+cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00400000 00100000 "bootloader"
+mtd1: 00800000 00200000 "logo"
+mtd2: 00800000 00200000 "aml_logo"
+mtd3: 00800000 00200000 "recovery"
+mtd4: 00800000 00200000 "boot"
+mtd5: 20000000 00200000 "system"
+mtd6: 08000000 00200000 "cache"
+mtd7: 20000000 00200000 "userdata"
+mtd8: b5400000 00200000 "NFTL_Part"
+
+<5>[    1.629525] 0x000000000000-0x000000400000 : "bootloader"
+<4>[    1.835277] aml nand env valid addr: 604000
+<6>[    1.871398] nand env: nand_env_probe.
+<5>[    1.871942] 0x000000c00000-0x000001400000 : "logo"
+<5>[    1.872721] 0x000001400000-0x000001c00000 : "aml_logo"
+<5>[    1.873502] 0x000001c00000-0x000002400000 : "recovery"
+<5>[    1.874346] 0x000002400000-0x000002c00000 : "boot"
+<5>[    1.875161] 0x000002c00000-0x000022c00000 : "system"
+<4>[    1.875181]  NAND bbt detect factory Bad block at 5a00000
+<5>[    1.876036] 0x000022c00000-0x00002ac00000 : "cache"
+<5>[    1.876840] 0x00002ac00000-0x00004ac00000 : "userdata"
+<5>[    1.877654] 0x00004ac00000-0x000100000000 : "NFTL_Part"
+<4>[    2.915298] nftl initilize completely dev size: 0xa7a00000 14
+<6>[    2.915918]  avnftl8: p1
+<4>[    2.916703] nftl release flush cache data: 0
+
+
+$ cd arch/arm/mach-meson3/
+
+#### Make a test34 file set from reff34-1 files.
+#### Run "make menuconfig" to select the platform. 
+#### Add define of VM_* to .h
+#### Add power_off_backlight to .c
+
+$ cd ../../..
+$ time make
+
+#### Error: undefined refernece to extern_usb_wifi_power from drivers/amlogic/wifi/rtl8xxx_CU/8192cu.ko 
+
+ [localhost m1-kernel-android]$ grep -r extern_usb_wifi_power drivers/amlogic/wifi/*
+  drivers/amlogic/wifi/Kconfig:     This config adds support for controlling power of Realtek 8xxxCU 
+  series,need define function extern_usb_wifi_power() in bsp first.
+ drivers/amlogic/wifi/rtl8xxx_CU/os_dep/linux/usb_intf.c:void extern_usb_wifi_power(int is_power);
+
+#### Add extern_usb_wifi_power to .c
+
+$ time make
+$ time make uImage
+
+$ cp -a arch/arm/mach-meson3/*test34* ../../../arc-amlogic/
+
+

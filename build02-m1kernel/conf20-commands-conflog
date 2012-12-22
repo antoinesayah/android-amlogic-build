@@ -1,0 +1,260 @@
+
+
+$ cp ../../../arc-amlogic/test-config-original .config
+
+
+[@localhost m1-kernel-android]$ make oldconfig
+
+scripts/kconfig/conf -o arch/arm/Kconfig
+*
+* Restart config...
+*
+*
+* Meson3 platform type
+*
+Support M3 (M3_SKT_V1) platform (MACH_MESON3_REFF01) [N/y/?] (NEW)
+Support M3 (WA) platform (MACH_MESON3_REFF02) [N/y/?] (NEW)
+Support M3 (Shuttle) platform (MACH_MESON3_REFF03) [N/y/?] (NEW)
+Support M3 (Ramos) platform (MACH_MESON3_REFF04) [N/y/?] (NEW)
+Support M3 (SOCKET) platform (MACH_MESON3_REFF05) [N/y/?] (NEW)
+Support M3 (Ainol) platform (MACH_MESON3_REFF06) [N/y/?] (NEW)
+Support M3 (Malata) platform (MACH_MESON3_REFF07) [N/y/?] (NEW)
+Support M3 F08 platform (MACH_MESON3_REFF08) [N/y/?] (NEW)
+Support M3 F09 platform (MACH_MESON3_REFF09) [N/y/?] (NEW)
+Support M3 (Asus) MBX platform (MACH_MESON3_REFF10) [N/y/?] (NEW)
+Support M3 (Gadmei) platform (MACH_MESON3_REFF11) [N/y/?] (NEW)
+Support M3 (Gadmei Portrait 1280*800) (MACH_MESON3_REFF11_P800) [N/y/?] (NEW)
+Support M3 (Gadmei BC 4329) (MACH_MESON3_REFF11_4329) [N/y/?] (NEW)
+Support MT720 (Keenhi M3 1024*600) platform (MACH_MESON3_REFF14) [N/y/?] (NEW)
+Support M3 MBX platform (MACH_MESON3_REFF16) [N/y/?] (NEW)
+Support M3(lenovo) MBX platform (MACH_MESON3_REFF16_1) [N/y/?] (NEW)
+Support M3 Bestv MBX platform (MACH_MESON3_REFF20) [N/y/?] (NEW)
+Support M3 PBI MBX platform (MACH_MESON3_REFF33) [N/y/?] (NEW)
+Support M3 NGN MBX platform (MACH_MESON3_REFF34) [N/y/?] (NEW)
+Support M3 NGN MBX platform (MACH_MESON3_REFF34_1) [N/y/?] (NEW)
+Support M3 NGN MBX platform (MACH_MESON3_REFF34_2) [N/y/?] (NEW)
+Clock Tick Rate (MESON3_CLOCK_TICK_RATE) [25000000] 25000000
+Support M3 A9 domain power down (AML_SUSPEND) [Y/n] y
+  Turn on screen early (SCREEN_ON_EARLY) [Y/n] y
+  Enable watchdog while suspend and resume (SUSPEND_WATCHDOG) [N/y] (NEW)
+turn the gates off when system init (AML_INIT_GATE_OFF) [N/y] n
+scale clk81 freqence in dynamic mode (CLK81_DFS) [N/y] n
+*
+* Amlogic Input device support
+*
+Amlogic ir remote control support (KEYPADS_AM) [Y/n/m/?] y
+Amlogic virtual ir remote support (only for QA test) (VIRTUAL_REMOTE) [N/m/y/?] n
+Amlogic SARADC support (SARADC_AM) [Y/n/m/?] y
+  Amlogic ADC touchscreen support (ADC_TOUCHSCREEN_AM) [N/m/y/?] n
+  Amlogic ADC keypad support (ADC_KEYPADS_AM) [Y/n/m/?] y
+Amlogic Key Input(custom) support (KEY_INPUT_CUSTOM_AM) [Y/n/m/?] y
+Sintek capacitive touch panel (SINTEK_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+ZET6221 capacitive touch panel (ZET6221_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW)
+SSD2533 capacitive touch panel (SSD2533_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW)
+ITK capacitive touch panel (ITK_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+EETI capacitive touch panel (EETI_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+sis92xx capacitive touch panel (SIS92XX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+focaltech capacitive touch panel (FOCALTECH_CAPACITIVE_TOUCHSCREEN) [Y/n/m/?] y
+focaltech capacitive touch panel support upgrade (FOCALTECH_TOUCHSCREEN_CODE_UPG) [N/m/y/?] n
+HX8520 capacitive touch panel (HX8520_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Raydium capacitive touch panel (RAYDIUM_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix capacitive touch panel (GOODIX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix GT819 capacitive touch panel (GOODIX_GT819_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+Goodix GT828X capacitive touch panel (GOODIX_GT82X_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] (NEW)
+UOR7X5X resistive touch panel (UOR7X5X_RESISTIVE_TOUCHSCREEN) [N/m/y/?] n
+UOR6X5X resistive touch panel (UOR6X5X_RESISTIVE_TOUCHSCREEN) [N/m/y/?] n
+pixcir capacitive touch panel (PIXCIR_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+ite it7260 capacitive touch panel (IT7260_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+SSD25XX capacitive touch panel (SSD25XX_CAPACITIVE_TOUCHSCREEN) [N/m/y/?] n
+SiS 9200 family I2C touchscreen driver (TOUCHSCREEN_SIS_I2C) [N/m/y/?] n
+BU2102X resistive touchscreen (BU2102X_RESISTIVE_TOUCHSCREEN) [N/m/y/?] n
+IT7230 touch key pad support (TOUCH_KEY_PAD_IT7230) [N/m/y/?] n
+SO340010 capacitive keypad support (TOUCH_KEY_PAD_SO340010) [N/m/y/?] n
+VFD support (VFD_ENABLE) [N/m/y/?] n
+Amlogic IR Receiver(Self-study Remote) support (AM_IR_RECEIVER) [N/m/y/?] (NEW)
+*
+* Amlogic Watchdog Timer Support
+*
+Amlogic Watchdog (AML_WATCHDOG) [Y/n/m/?] (NEW)
+*
+* Amlogic BOOT MONITOR SYSFS
+*
+BOOT MONITOR SYSFS (BOOT_MONITOR) [N/y/?] (NEW)
+*
+* Amlogic IPTV Security Support
+*
+iptv security support (AM_IPTV_SECURITY) [N/m/y/?] (NEW)
+*
+* Amlogic USB Support
+*
+Amloigc usb host controler dwc_otg support (USB_DWC_OTG_HCD) [Y/n/?] y
+  USB High speed electric test support (USB_HOST_ELECT_TEST) [Y/n/?] y
+  Disable DWC OTG USB NAK ISR (DWC_USB_NAK_IN_TIMER) [N/y/?] n
+Amlogic usb controller power/clock/tuning control (USB_PHY_CONTROL) [Y/n/?] y
+Amlogic usb D+ pullup disable when initial (USB_DPLINE_PULLUP_DISABLE) [N/y/?] (NEW)
+*
+* AMLOGIC NAND Flash support
+*
+Amlogic NAND FLASH M1/M2/M3 SUPPORT (AM_NAND) [Y/n/?] y
+  use nand rbpin (A3/M3 optional) (AM_NAND_RBPIN) [Y/n] y
+  use aml nand env (/dev/nand_env) (AML_NAND_ENV) [Y/n] y
+  Meson key data store in nand device(dev/nand_key) support (AML_NAND_KEY) [N/y/?] (NEW)
+  Amlogic NFTL (NAND Flash Translation Layer) support (AML_NFTL) [Y/n/m/?] y
+  Meson NAND NEW_FTL support (AML_NFTL_NEW) [N/m/y/?] (NEW)
+*
+* Amlogic video output module
+*
+TV output (AM_TV_OUTPUT) [Y/n/m/?] y
+LCD output (AM_TCON_OUTPUT) [Y/n/m/?] y
+  LCD Output I/F Type
+  > 1. RGB TTL Interface (AM_LCD_TTL_OUTPUT)
+    2. LVDS Interface (AM_LCD_LVDS_OUTPUT)
+    3. miniLVDS Interface (AM_LCD_MLVDS_OUTPUT)
+  choice[1-3?]: 1
+W7NEW panel driver (AML_TCON_W7NEW) [N/m/y/?] n
+W8 panel driver (AML_TCON_W8) [N/m/y/?] n
+Y7 panel driver (AML_TCON_Y7) [N/m/y/?] n
+S7 panel driver (AML_TCON_S7) [N/m/y/?] n
+TM070 panel driver (AML_TCON_TM070) [N/m/y/?] (NEW)
+*
+* Amlogic osd_ext module
+*
+Amlogic osd_ext support (AM_FB_EXT) [N/m/y/?] (NEW)
+*
+* AMLOGIC AV Streaming devices
+*
+AMLOGIC Video management (AM_VIDEO) [Y/?] y
+AMLOGIC Video2 management (AM_VIDEO2) [Y/n/?] y
+AMLOGIC MPEG1/2 Video Decoder (AM_VDEC_MPEG12) [Y/n/m/?] y
+AMLOGIC MPEG4 Video Decoder (AM_VDEC_MPEG4) [Y/n/m/?] y
+AMLOGIC VC1 Video Decoder (AM_VDEC_VC1) [Y/n/m/?] y
+AMLOGIC AVS Video Decoder (AM_VDEC_AVS) [Y/n/m/?] (NEW)
+AMLOGIC H264MVC Video Decoder (AM_VDEC_H264MVC) [Y/n/m/?] y
+AMLOGIC Motion JPEG Video Decoder (AM_VDEC_MJPEG) [Y/n/m/?] y
+AMLOGIC Real Video Decoder (AM_VDEC_REAL) [Y/n/m/?] y
+AMLOGIC HW jpeg decoder (AM_JPEGDEC) [N/m/y/?] n
+AMLOGIC HW jpeg decoder no scaler (AM_JPEGDEC_NO_SCALE) [N/m/y/?] (NEW)
+AMLOGIC Time sync driver (AM_TIMESYNC) [Y/?] y
+AMLOGIC AV Streaming support (AM_STREAMING) [Y/n/?] y
+AMLOGIC SubTitle support (AM_SUBTITLE) [Y/n/?] y
+*
+* Hardware Monitoring support
+*
+Hardware Monitoring support (HWMON) [Y/n/m/?] y
+  Hardware Monitoring Chip debugging messages (HWMON_DEBUG_CHIP) [N/y/?] (NEW)
+  *
+  * Native drivers
+  *
+  Analog Devices AD7414 (SENSORS_AD7414) [N/m/y/?] (NEW)
+  Analog Devices AD7416, AD7417 and AD7418 (SENSORS_AD7418) [N/m/y/?] (NEW)
+  National Semiconductor ADCxxxSxxx (SENSORS_ADCXX) [N/m/y/?] (NEW)
+  Analog Devices ADM1021 and compatibles (SENSORS_ADM1021) [N/m/y/?] (NEW)
+  Analog Devices ADM1025 and compatibles (SENSORS_ADM1025) [N/m/y/?] (NEW)
+  Analog Devices ADM1026 and compatibles (SENSORS_ADM1026) [N/m/y/?] (NEW)
+  Analog Devices ADM1029 (SENSORS_ADM1029) [N/m/y/?] (NEW)
+  Analog Devices ADM1031 and compatibles (SENSORS_ADM1031) [N/m/y/?] (NEW)
+  Analog Devices ADM9240 and compatibles (SENSORS_ADM9240) [N/m/y/?] (NEW)
+  Analog Devices ADT7411 (SENSORS_ADT7411) [N/m/y/?] (NEW)
+  Analog Devices ADT7462 (SENSORS_ADT7462) [N/m/y/?] (NEW)
+  Analog Devices ADT7470 (SENSORS_ADT7470) [N/m/y/?] (NEW)
+  Analog Devices ADT7473, ADT7475, ADT7476 and ADT7490 (SENSORS_ADT7475) [N/m/y/?] (NEW)
+  Andigilog aSC7621 (SENSORS_ASC7621) [N/m/y/?] (NEW)
+  Attansic ATXP1 VID controller (SENSORS_ATXP1) [N/m/y/?] (NEW)
+  Dallas Semiconductor DS1621 and DS1625 (SENSORS_DS1621) [N/m/y/?] (NEW)
+  Fintek F71805F/FG, F71806F/FG and F71872F/FG (SENSORS_F71805F) [N/m/y/?] (NEW)
+  Fintek F71858FG, F71862FG, F71882FG, F71889FG and F8000 (SENSORS_F71882FG) [N/m/y/?] (NEW)
+  Fintek F75375S/SP and F75373 (SENSORS_F75375S) [N/m/y/?] (NEW)
+  GMT G760A (SENSORS_G760A) [N/m/y/?] (NEW)
+  Genesys Logic GL518SM (SENSORS_GL518SM) [N/m/y/?] (NEW)
+  Genesys Logic GL520SM (SENSORS_GL520SM) [N/m/y/?] (NEW)
+  ITE IT87xx and compatibles (SENSORS_IT87) [N/m/y/?] (NEW)
+  National Semiconductor LM63 (SENSORS_LM63) [N/m/y/?] (NEW)
+  National Semiconductor LM70 / Texas Instruments TMP121 (SENSORS_LM70) [N/m/y/?] (NEW)
+  National Semiconductor LM73 (SENSORS_LM73) [N/m/y/?] (NEW)
+  National Semiconductor LM75 and compatibles (SENSORS_LM75) [N/m/y/?] (NEW)
+  National Semiconductor LM77 (SENSORS_LM77) [N/m/y/?] (NEW)
+  National Semiconductor LM78 and compatibles (SENSORS_LM78) [N/m/y/?] (NEW)
+  National Semiconductor LM80 (SENSORS_LM80) [N/m/y/?] (NEW)
+  National Semiconductor LM83 and compatibles (SENSORS_LM83) [N/m/y/?] (NEW)
+  National Semiconductor LM85 and compatibles (SENSORS_LM85) [N/m/y/?] (NEW)
+  National Semiconductor LM87 and compatibles (SENSORS_LM87) [N/m/y/?] (NEW)
+  National Semiconductor LM90 and compatibles (SENSORS_LM90) [N/m/y/?] (NEW)
+  National Semiconductor LM92 and compatibles (SENSORS_LM92) [N/m/y/?] (NEW)
+  National Semiconductor LM93 and compatibles (SENSORS_LM93) [N/m/y/?] (NEW)
+  Linear Technology LTC4215 (SENSORS_LTC4215) [N/m/y/?] (NEW)
+  Linear Technology LTC4245 (SENSORS_LTC4245) [N/m/y/?] (NEW)
+  National Semiconductor LM95241 sensor chip (SENSORS_LM95241) [N/m/y/?] (NEW)
+  Maxim MAX1111 Multichannel, Serial 8-bit ADC chip (SENSORS_MAX1111) [N/m/y/?] (NEW)
+  Maxim MAX1619 sensor chip (SENSORS_MAX1619) [N/m/y/?] (NEW)
+  Maxim MAX6650 sensor chip (SENSORS_MAX6650) [N/m/y/?] (NEW)
+  National Semiconductor PC87360 family (SENSORS_PC87360) [N/m/y/?] (NEW)
+  National Semiconductor PC87427 (SENSORS_PC87427) [N/m/y/?] (NEW)
+  Philips PCF8591 ADC/DAC (SENSORS_PCF8591) [N/m/y/?] (NEW)
+  SMSC DME1737, SCH311x and compatibles (SENSORS_DME1737) [N/m/y/?] (NEW)
+  SMSC LPC47M10x and compatibles (SENSORS_SMSC47M1) [N/m/y/?] (NEW)
+  SMSC LPC47M192 and compatibles (SENSORS_SMSC47M192) [N/m/y/?] (NEW)
+  SMSC LPC47B397-NC (SENSORS_SMSC47B397) [N/m/y/?] (NEW)
+  Texas Instruments ADS7828 (SENSORS_ADS7828) [N/m/y/?] (NEW)
+  Texas Instruments AMC6821 (SENSORS_AMC6821) [N/m/y/?] (NEW)
+  Texas Instruments THMC50 / Analog Devices ADM1022 (SENSORS_THMC50) [N/m/y/?] (NEW)
+  Texas Instruments TMP401 and compatibles (SENSORS_TMP401) [N/m/y/?] (NEW)
+  Texas Instruments TMP421 and compatible (SENSORS_TMP421) [N/m/y/?] (NEW)
+  VIA VT1211 (SENSORS_VT1211) [N/m/y/?] (NEW)
+  Winbond W83781D, W83782D, W83783S, Asus AS99127F (SENSORS_W83781D) [N/m/y/?] (NEW)
+  Winbond W83791D (SENSORS_W83791D) [N/m/y/?] (NEW)
+  Winbond W83792D (SENSORS_W83792D) [N/m/y/?] (NEW)
+  Winbond W83793 (SENSORS_W83793) [N/m/y/?] (NEW)
+  Winbond W83L785TS-S (SENSORS_W83L785TS) [N/m/y/?] (NEW)
+  Winbond W83L786NG, W83L786NR (SENSORS_W83L786NG) [N/m/y/?] (NEW)
+  Winbond W83627HF, W83627THF, W83637HF, W83687THF, W83697HF (SENSORS_W83627HF) [N/m/y/?] (NEW)
+  Winbond W83627EHF/EHG/DHG, W83667HG (SENSORS_W83627EHF) [N/m/y/?] (NEW)
+  STMicroeletronics LIS3LV02Dx three-axis digital accelerometer (SPI) (SENSORS_LIS3_SPI) [N/m/y/?] (NEW)
+  STMicroeletronics LIS3LV02Dx three-axis digital accelerometer (I2C) (SENSORS_LIS3_I2C) [N/m/y/?] (NEW)
+  MMA7660 device driver (MXC_MMA7660) [Y/n/m] y
+*
+* Video capture adapters
+*
+Video capture adapters (VIDEO_CAPTURE_DRIVERS) [Y/n/?] y
+  Enable advanced debug functionality (VIDEO_ADV_DEBUG) [N/y/?] n
+  Enable old-style fixed minor ranges for video devices (VIDEO_FIXED_MINOR_RANGES) [N/y/?] n
+  Autoselect pertinent encoders/decoders and other helper chips (VIDEO_HELPER_CHIPS_AUTO) [Y/n/?] y
+  Virtual Video Driver (VIDEO_VIVI) [N/m/y/?] n
+  SAA5246A, SAA5281 Teletext processor (VIDEO_SAA5246A) [N/m/y/?] n
+  SAA5249 Teletext processor (VIDEO_SAA5249) [N/m/y/?] n
+  SoC camera support (SOC_CAMERA) [N/m/y/?] n
+  Amlogic Platform Capture Driver (VIDEO_AMLOGIC_CAPTURE) [Y/n/m/?] y
+    Enable function to support frame rotation (AMLOGIC_CAPTURE_FRAME_ROTATE) [N/y/?] (NEW)
+    Force disable Videolayer when use vm (AMLOGIC_VM_DISABLE_VIDEOLAYER) [N/y/?] (NEW)
+    Force check wether camera devices exist (VIDEO_AMLOGIC_CAPTURE_PROBE) [N/y/?] (NEW)
+    Amlogic Platform Flashlight Driver (VIDEO_AMLOGIC_FLASHLIGHT) [N/m/y/?] n
+    Amlogic Platform Capture Driver for GT2005 (VIDEO_AMLOGIC_CAPTURE_GT2005) [N/m/y/?] n
+    Amlogic Platform Capture Driver for GC0308 (VIDEO_AMLOGIC_CAPTURE_GC0308) [Y/n/m/?] y
+    Amlogic Platform Capture Driver for GC0329 (VIDEO_AMLOGIC_CAPTURE_GC0329) [N/m/y/?] (NEW)
+    Amlogic Platform Capture Driver for OV3640 (VIDEO_AMLOGIC_CAPTURE_OV3640) [N/m/y/?] (NEW)
+    Amlogic Platform Capture Driver for OV3660 (VIDEO_AMLOGIC_CAPTURE_OV3660) [N/m/y/?] n
+    Amlogic Platform Capture Driver for OV5642 (VIDEO_AMLOGIC_CAPTURE_OV5642) [N/m/y/?] n
+    Amlogic Platform Capture Driver for OV5640 (VIDEO_AMLOGIC_CAPTURE_OV5640) [N/m/y/?] (NEW)
+    Amlogic Platform Capture Driver for OV7675 (VIDEO_AMLOGIC_CAPTURE_OV7675) [N/m/y/?] n
+    Amlogic Platform Capture Driver for OV2655 (VIDEO_AMLOGIC_CAPTURE_OV2655) [N/m/y/?] n
+    Amlogic Platform Capture Driver for SP0838 (VIDEO_AMLOGIC_CAPTURE_SP0838) [N/m/y/?] n
+*
+* ALSA for SoC audio support
+*
+ALSA for SoC audio support (SND_SOC) [Y/n/m/?] y
+  soc audio for AMLogic Ssystem-on-system (SND_AML_SOC) [Y/n/m/?] y
+    M1 evaluation board with internel audio dac (SND_AML_M1) [N/m/y] n
+    AML6236 MID board with WM8900 (SND_AML_M1_MID_WM8900) [N/m/y] n
+    AML8726M ARM Dev board with WM8900 (SND_AML_M1_ARMDEV_WM8900) [N/m/y] n
+    AML8726M MID board with RT5621 (SND_AML_M1_MID_RT5621) [N/m/y] n
+    AML M3  board with BT40183 (SND_AML_M3_BT40183) [N/m/y] (NEW)
+    M2 evaluation board with internal audio codec (SND_AML_M2) [N/m/y] n
+    M3 evaluation board with internal audio codec (SND_AML_M3) [Y/n/m] y
+    AMLM3 board with CS4334 (SND_AML_M3_CS4334) [N/m/y] (NEW)
+  Build all ASoC CODEC drivers (SND_SOC_ALL_CODECS) [N/m/y/?] n
+#
+# configuration written to .config
+#
+
+
+$ cp .config ../../../arc-amlogic/conf21
+
