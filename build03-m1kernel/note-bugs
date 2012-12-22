@@ -1,9 +1,12 @@
 
-Two .h files generated in source directory after k1ocfg.sh:
+
+[1] Two .h files generated in source directory after k1ocfg.sh:
+
+ [m1-kernel-android]$ find . -type f -newer ../../xstamp0 
+ ./k9clean.sh
+ ./drivers/amlogic/mali/arch-aml-meson-m400-1/config.h
+ ./drivers/amlogic/ump/arch-aml-meson-m400-1/config.h
 
 
-[m1-kernel-android]$ find . -type f -newer ../../xstamp0 
-./k9clean.sh
-./drivers/amlogic/mali/arch-aml-meson-m400-1/config.h
-./drivers/amlogic/ump/arch-aml-meson-m400-1/config.h
+[2] Cannot use separate obj dir.
 

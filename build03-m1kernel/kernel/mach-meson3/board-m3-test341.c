@@ -49,7 +49,8 @@
 #include <mach/gpio.h>
 #include <linux/delay.h>
 #include <mach/clk_set.h>
-#include "board-m3-reff34.h"
+///#include "board-m3-reff34.h"
+#include "board-m3-test34.h"
 
 
 #ifdef CONFIG_ANDROID_PMEM
@@ -453,6 +454,16 @@ static struct platform_device vdin_device = {
     .resource      = vdin_resources,
 };
 #endif
+///test341 adds this :
+void extern_usb_wifi_power(int is_power)
+{
+}
+EXPORT_SYMBOL(extern_usb_wifi_power);
+///test341 adds this :
+void power_off_backlight(void)
+{
+}
+EXPORT_SYMBOL(power_off_backlight);
 
 #if defined(CONFIG_SDIO_DHD_CDC_WIFI_40181_MODULE_MODULE)
 /******************************
@@ -1392,34 +1403,44 @@ static struct mtd_partition multi_partition_info_1G[] =
 static struct mtd_partition multi_partition_info_4G[] =
 {
     {
-        .name = "aml_logo",
+        .name = "bootloader",
+        .offset = 0*1024*1024,
+        .size = 4*1024*1024,
+    },
+    {
+        .name = "logo",
         .offset = 12*1024*1024,
-        .size = 16*1024*1024,
+        .size = 8*1024*1024,
+    },
+    {
+        .name = "aml_logo",
+        .offset = 20*1024*1024,
+        .size = 8*1024*1024,
     },
     {
         .name = "recovery",
         .offset = 28*1024*1024,
-        .size = 16*1024*1024,
+        .size = 8*1024*1024,
     },
     {
         .name = "boot",
-        .offset = 44*1024*1024,
-        .size = 20*1024*1024,
+        .offset = 36*1024*1024,
+        .size = 8*1024*1024,
     },
     {
         .name = "system",
-        .offset = 64*1024*1024,
+        .offset = 44*1024*1024,
         .size = 512*1024*1024,
     },
     {
         .name = "cache",
-        .offset = 576*1024*1024,
-        .size = 192*1024*1024,
+        .offset = 556*1024*1024,
+        .size = 128*1024*1024,
     },
     {
         .name = "userdata",
-        .offset = 768*1024*1024,
-        .size = 1280*1024*1024,
+        .offset = 684*1024*1024,
+        .size = 512*1024*1024,
     },
 #ifdef CONFIG_AML_NFTL
     {
