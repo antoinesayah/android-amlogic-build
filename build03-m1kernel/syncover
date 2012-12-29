@@ -1,6 +1,10 @@
 #!/bin/bash -x
 #
 # +--work/arc  --original packages
+# | +--work/arc/arm-2010q1-202-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2
+# | +--work/arc/arm_ref-build_system_2011-07-26-14.00-svn2028.tar.gz
+# | \--work/arc/m1-kernel-android-2012-11-20-git-5d0f6b8e93.tar.gz
+# |
 # +--conf  --this dir
 # | \--conf/kernel  -- kernel archive
 # |   \--conf/kernel/meson3  -- bsp
@@ -13,12 +17,15 @@
 if [ ! -d kernel ] ; then mkdir kernel; fi
 
 EXC='--exclude=*.o --exclude=*.o.cmd --exclude=*.builtin --exclude=*.order'
+SRC=../work/srcs
+KER=$SRC/arm_ref/m1-kernel-android
 
-rsync -tv $1  $EXC ../work/srcs/xstamp0 . 
-rsync -tv $1  $EXC ../work/srcs/arm_ref/m1-kernel-android/env.sh    kernel/
-rsync -tv $1  $EXC ../work/srcs/arm_ref/m1-kernel-android/k1ocfg.sh kernel/
-rsync -tv $1  $EXC ../work/srcs/arm_ref/m1-kernel-android/k2mcfg.sh kernel/
-rsync -tv $1  $EXC ../work/srcs/arm_ref/m1-kernel-android/k3bld.sh  kernel/
-rsync -tv $1  $EXC ../work/srcs/arm_ref/m1-kernel-android/k9clean.sh kernel/
-rsync -rtv $1 $EXC ../work/srcs/arm_ref/m1-kernel-android/arch/arm/mach-meson3 kernel/
+
+rsync -tv $1  $EXC $SRC/xstamp0    . 
+rsync -tv $1  $EXC $KER/env.sh     kernel/
+rsync -tv $1  $EXC $KER/k1ocfg.sh  kernel/
+rsync -tv $1  $EXC $KER/k2mcfg.sh  kernel/
+rsync -tv $1  $EXC $KER/k3bld.sh   kernel/
+rsync -tv $1  $EXC $KER/k9clean.sh kernel/
+rsync -rtv $1 $EXC $KER/arch/arm/mach-meson3 kernel/
 
