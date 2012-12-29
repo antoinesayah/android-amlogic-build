@@ -1,0 +1,69 @@
+
+
+
+Build Steps: 
+=============
+See "syncover" for the directories and files.
+
+[1] Download toolchain, kernel source, and build system. 
+[2] Extract the files.
+[3] Patch the files under kernel directory to contain files in this project. 
+    The patch should contain changes from tag bld001-xstamp0 till HEAD.
+    The tag bld002 adds copy of test34 source files by simply copying reff34-1 files. 
+    Later tags adds modifications to the source and scripts. 
+
+[4] Use "cd arm_ref/m1-kernel-android" to go into kernel directory.
+[5] Run "source env.sh" to set environment variables.
+
+[6] Run "./k1ocfg.sh" to apply the saved configuration. 
+[7] Run "./k2mcfg.sh" if any kernel configuration is to be changed manually.
+[8] Run ".k3bld.sh" to build the uImage. 
+
+
+
+Boot into the built kernel using a SD card:
+==============================================
+
+Refer to this forum page: 
+ http://www.freaktab.com/showthread.php?3029-WAIT!-New-Nexbook-AMlogic-root-idea!/page4
+
+Download the file mentioned in the forum page here: 
+ https://docs.google.com/file/d/0B9BFwCzfMWZ8S2tCemEyZ2lZM2M/edit
+
+Then follow the instructions from the forum page: 
+
+ 1) erase and format your SDcard so you know you have a nice clean one.
+ 2) Unzip this download package and put ALL the files on the root of your SDcard.
+
+    aml_autoscript
+    update_root_ext3.zip
+    uImage_cwm
+    uImage
+
+ 2.5) modification:
+    Now delete the original "uImage_cwm" and "uImage". 
+    Copy your built uImage kernel into the SD card and rename it "uImage_cwm". 
+    Also delete the file "update_root_ext3.zip" as step 4,5,6) below not working yet.
+    Note that step 3) uses normal power-up procedure, i.e. hold power button for 3 seconds. 
+
+ 3) Boot into recovery using the buttons DO NOT use the APP from the OS.
+
+ The below steps does not apply as the "update_root_ext3.zip" does not work yet. 
+ 
+ 4) In recovery use menu apply update from sdcard and select the update_root_ext3.zip
+ 5) Watch for errors when it is apllying package and let me know if you get any.
+ 6) reboot using recovery menu.
+
+
+Alternatively, rename uImage to "uImage_recovery" and hold volume-down and power button, 
+it also boots into the "uImage_recovery" from SD card. See page 14 on the forum topic. 
+
+
+
+Alternative Toolchain from android.googlesource.com
+======================================================
+
+$ git clone https://android.googlesource.com/platform/prebuilt
+$ export PATH=$(pwd)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin:$PATH
+
+
