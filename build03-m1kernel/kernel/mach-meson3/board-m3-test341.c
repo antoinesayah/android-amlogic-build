@@ -460,10 +460,10 @@ void extern_usb_wifi_power(int is_power)
 }
 EXPORT_SYMBOL(extern_usb_wifi_power);
 ///test341 adds this :
-void power_off_backlight(void)
-{
-}
-EXPORT_SYMBOL(power_off_backlight);
+///void power_off_backlight(void)
+///{
+///}
+///EXPORT_SYMBOL(power_off_backlight);
 
 #if defined(CONFIG_SDIO_DHD_CDC_WIFI_40181_MODULE_MODULE)
 /******************************
@@ -2196,11 +2196,22 @@ static void __init power_hold(void)
     //+5V_AMP on
     set_gpio_mode(GPIOA_bank_bit0_27(15), GPIOA_bit_bit0_27(15), GPIO_OUTPUT_MODE);
     set_gpio_val(GPIOA_bank_bit0_27(15), GPIOA_bit_bit0_27(15), 1);
+///reff06.c:
+    set_gpio_val(GPIOAO_bank_bit0_11(6), GPIOAO_bit_bit0_11(6), 1);
+    set_gpio_mode(GPIOAO_bank_bit0_11(6), GPIOAO_bit_bit0_11(6), GPIO_OUTPUT_MODE);
+    ///VCCx2 power up from reff06.c:
+    printk(KERN_INFO "set_vccx2 power up\n");
+    set_gpio_mode(GPIOA_bank_bit0_27(26), GPIOA_bit_bit0_27(26), GPIO_OUTPUT_MODE);
+    set_gpio_val(GPIOA_bank_bit0_27(26), GPIOA_bit_bit0_27(26), 0);
+
+    ///.            
 }
 
 static void __init LED_PWM_REG0_init(void)
 {
-#if 1 	// PWM_C
+///-#if 1 	// PWM_C
+///+
+#if 0 	// PWM_C
     printk(KERN_INFO "LED_PWM_REG0_init.\n");
 	 SET_CBUS_REG_MASK(PERIPHS_PIN_MUX_2,(1<<2));
     WRITE_CBUS_REG(PWM_PWM_C, (0xff00<<16) |(0xff00<<0));
@@ -2226,6 +2237,12 @@ static void __init LED_PWM_REG0_init(void)
     WRITE_CBUS_REG_BITS(LED_PWM_REG0,1,0,4); //adust cpu1.2v   to 1.26V     
 #endif
 }
+///+
+extern void power_on_backlight(void);
+extern void power_off_backlight(void);
+extern unsigned get_backlight_level(void);
+extern void set_backlight_level(unsigned level);
+///.
 
 static __init void m1_init_machine(void)
 {
@@ -2239,9 +2256,18 @@ static __init void m1_init_machine(void)
     
     power_hold();
 //    pm_power_off = power_off;		//Elvis fool
-    device_clk_setting();
+///-    device_clk_setting();
     device_pinmux_init();
     //LED_PWM_REG0_init();
+///+ 
+    power_off_backlight(); msleep(500); power_on_backlight(); msleep(500);
+    power_off_backlight(); msleep(500); power_on_backlight(); msleep(500);
+    power_off_backlight(); msleep(500); power_on_backlight(); msleep(500);
+    power_off_backlight(); msleep(500); power_on_backlight(); msleep(500);
+    power_off_backlight(); msleep(500); power_on_backlight(); msleep(500);
+    power_off_backlight(); msleep(500);
+    LED_PWM_REG0_init();
+///.
 
 	
 #ifdef CONFIG_VIDEO_AMLOGIC_CAPTURE
