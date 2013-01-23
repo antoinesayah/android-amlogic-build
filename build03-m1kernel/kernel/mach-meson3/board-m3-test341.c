@@ -81,8 +81,10 @@
 #include <linux/efuse.h>
 #endif
 
-///#define TESTS (1)
-#define TESTS (2)
+///define TESTS to: 1 to simulate no display driver. 
+///                 2 to use ttl, lvds, mlvds drivers
+#define TESTS (1)
+///#define TESTS (2)
 
 #ifdef CONFIG_SUSPEND
 static int suspend_state=0;
@@ -465,7 +467,7 @@ void extern_usb_wifi_power(int is_power)
 EXPORT_SYMBOL(extern_usb_wifi_power);
 #endif
 #if defined(TESTS) && (TESTS==1)
-test341 adds this :
+///test341 adds this :
 void power_off_backlight(void)
 {
 }

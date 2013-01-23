@@ -67,3 +67,54 @@ $ git clone https://android.googlesource.com/platform/prebuilt
 $ export PATH=$(pwd)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin:$PATH
 
 
+
+Missing Driver
+===============
+
+# -CONFIG_AML_TCON_KR070PC7S=y
+
+
+
+Tests
+===========
+
+1: no amlogic lcd display driver. ttl lcd.
+
+2: ttl lcd with driver tcon_tm070.
+   recovery SD blinking backlight.
+
+3: recovery SD, stuck at green prompt upgrading... please wait
+   normal boot, black screen.
+   normal recovery, stuck at green prompt.
+   lvds r_at070tna2
+   
+4: recovery SD, bright gradual vertical lines on screen in 5s, ending black.
+   first boot, black.
+   normal boot, horizon cursor at top left +4c.
+   lvds hv070wsa_100
+
+5: recovery SD boot, clean screen one horizontal line and blinking whole screen
+   ending black. 
+   first boot with small pink-purple dots top-left corner.
+   normal boot black.
+   recovery boot, stuck at green prompt upgrading please wait.
+
+   autoscript boot, use aml_autoscript and uImage_cwm, the green prompt line 
+   upgrading... please wait does not show.
+   lvds g_tm081jf01
+
+6: recovery boot with bright line on top then the whole gradually whitened screen. 
+   normal boot: small horizontal cursor top left corner.
+   lvds w13
+
+7: mlvds a_tm080xdh 
+8: mlvds g_tm080xdh
+9: mlvds g_tm080xdh2d
+   recovery SD boot with bright gradually whitened screen blink, ending black.
+   normal boot: small horizontal cursor top left corner and top right middle screen.
+
+11: macro controlled board-m3-test341.c with conf-test-1
+12: test-1 used board-m3-test341.c with conf-test-1
+
+
+
